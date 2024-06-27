@@ -1,0 +1,4653 @@
+INFO:root:################################################################################
+INFO:root:Iniciando verificação no M131301...
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:
+show platform
+-----------------------------------
+
+Switch  Ports    Model                Serial No.   MAC address     Hw Ver.       Sw Ver. 
+------  -----   ---------             -----------  --------------  -------       --------
+ 1       56     C9200-48PXG           FOC2802453E  a0bc.6f2e.2b80  V02           17.09.05      
+ 2       56     C9200-48PXG           FOC280244YS  a0bc.6f2e.5000  V02           17.09.05      
+Switch/Stack Mac Address : a0bc.6f2e.2b80 - Local Mac Address
+Mac persistency wait time: Indefinite
+                                   Current
+Switch#   Role        Priority      State 
+-------------------------------------------
+*1       Active          15         Ready               
+ 2       Standby         1          Ready
+INFO:root:
+show environment power
+-----------------------------------
+
+SW  PID                 Serial#     Status           Sys Pwr  PoE Pwr  Watts
+--  ------------------  ----------  ---------------  -------  -------  -----
+1A  PWR-C6-1KWAC        DCI2752N3JR  OK              Good     Good     1000
+1B  PWR-C6-1KWAC        DCI2748N0W7  OK              Good     Good     1000
+INFO:root:
+show cdp nei
+-----------------------------------
+
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone, 
+                  D - Remote, C - CVTA, M - Two-port Mac Relay 
+
+Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+95C6.stj.gov.br  Twe 1/1/2         147             R S I  C9500-24Y Twe 2/0/8
+95C6.stj.gov.br  Twe 2/1/2         124             R S I  C9500-24Y Twe 1/0/8
+APM1305i_215079  Ten 2/0/47        145              R T   C9120AXI- Gig 0
+APM1303e_215019  Ten 1/0/46        150              R T   C9120AXI- Gig 0
+APM1310i_215115  Ten 2/0/48        171              R T   C9120AXI- Gig 0
+APM1306i_215113  Ten 1/0/45        150              R T   C9120AXI- Gig 0
+APM1311i_215230  Ten 1/0/43        153              R T   C9120AXI- Gig 0
+APM1703i_215152  Ten 1/0/41        176              R T   C9120AXI- Gig 0
+
+Total cdp entries displayed : 8
+INFO:root:
+show interfaces switchport
+INFO:root:Name: Gi1/0/1
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/2
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/3
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/4
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/5
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/6
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/7
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/8
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/9
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/10
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/11
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/12
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/13
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/14
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/15
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/16
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/17
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/18
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/19
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/20
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/21
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/22
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/23
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/24
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/25
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/26
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/27
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/28
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/29
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/30
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/31
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/32
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/33
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/34
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/35
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/36
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/37
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/38
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/39
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi1/0/40
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te1/0/41
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 55 (Vlan_Access_Points)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: none
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te1/0/42
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te1/0/43
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 55 (Vlan_Access_Points)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: none
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te1/0/44
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te1/0/45
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 55 (Vlan_Access_Points)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: none
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te1/0/46
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 55 (Vlan_Access_Points)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: none
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te1/0/47
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te1/0/48
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te1/1/1
+Switchport: Enabled
+Administrative Mode: dynamic auto
+
+
+Name: Te1/1/2
+Switchport: Enabled
+Administrative Mode: dynamic auto
+
+
+Name: Te1/1/3
+Switchport: Enabled
+Administrative Mode: dynamic auto
+
+
+Name: Te1/1/4
+Switchport: Enabled
+Administrative Mode: dynamic auto
+
+
+Name: Twe1/1/1
+Switchport: Enabled
+Administrative Mode: dynamic auto
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: On
+Access Mode VLAN: 1 (default)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: none
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Twe1/1/2
+Switchport: Enabled
+Administrative Mode: trunk
+Operational Mode: trunk (member of bundle Po1)
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: dot1q
+Negotiation of Trunking: On
+Access Mode VLAN: 1 (default)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: none
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Fo1/1/1
+Switchport: Enabled
+Administrative Mode: dynamic auto
+
+
+Name: Fo1/1/2
+Switchport: Enabled
+Administrative Mode: dynamic auto
+
+
+Name: Gi2/0/1
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/2
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/3
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/4
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/5
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/6
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/7
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/8
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/9
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/10
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/11
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/12
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/13
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/14
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/15
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/16
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/17
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/18
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/19
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/20
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/21
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/22
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/23
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/24
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/25
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/26
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/27
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/28
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/29
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/30
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/31
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/32
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/33
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/34
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/35
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/36
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/37
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/38
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/39
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Gi2/0/40
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te2/0/41
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te2/0/42
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te2/0/43
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te2/0/44
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te2/0/45
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 8 (Ministros1)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: 113 (VoIP_Endpoints4)
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te2/0/46
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: Off
+Access Mode VLAN: 55 (Vlan_Access_Points)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: none
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te2/0/47
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 55 (Vlan_Access_Points)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: none
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te2/0/48
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 55 (Vlan_Access_Points)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: none
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Te2/1/1
+Switchport: Enabled
+Administrative Mode: dynamic auto
+
+
+Name: Te2/1/2
+Switchport: Enabled
+Administrative Mode: dynamic auto
+
+
+Name: Te2/1/3
+Switchport: Enabled
+Administrative Mode: dynamic auto
+
+
+Name: Te2/1/4
+Switchport: Enabled
+Administrative Mode: dynamic auto
+
+
+Name: Twe2/1/1
+Switchport: Enabled
+Administrative Mode: dynamic auto
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: On
+Access Mode VLAN: 99 (Gerencia_Switchs)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: none
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Twe2/1/2
+Switchport: Enabled
+Administrative Mode: trunk
+Operational Mode: trunk (member of bundle Po1)
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: dot1q
+Negotiation of Trunking: On
+Access Mode VLAN: 1 (default)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: none
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+
+Name: Fo2/1/1
+Switchport: Enabled
+Administrative Mode: dynamic auto
+
+
+Name: Fo2/1/2
+Switchport: Enabled
+Administrative Mode: dynamic auto
+
+
+Name: Po1
+Switchport: Enabled
+Administrative Mode: trunk
+Operational Mode: trunk
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: dot1q
+Negotiation of Trunking: On
+Access Mode VLAN: 1 (default)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: disabled
+Voice VLAN: none
+Administrative private-vlan host-association: none 
+Administrative private-vlan mapping: none 
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+
+Protected: false
+Unknown unicast blocked: disabled
+Unknown multicast blocked: disabled
+Vepa Enabled: false
+App Interface: false
+Appliance trust: none
+INFO:root:
+show mac add dynamic
+INFO:root:Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+   1    4880.0220.a6a8    DYNAMIC     Po1
+   1    4880.0220.a888    DYNAMIC     Po1
+  99    0015.5d1f.2407    DYNAMIC     Po1
+  99    0050.569c.01c3    DYNAMIC     Po1
+  99    0050.569c.0cf4    DYNAMIC     Po1
+  99    0050.569c.1715    DYNAMIC     Po1
+  99    0050.569c.1757    DYNAMIC     Po1
+  99    0050.569c.17fe    DYNAMIC     Po1
+  99    0050.569c.1818    DYNAMIC     Po1
+  99    0050.569c.1b3a    DYNAMIC     Po1
+  99    0050.569c.1c4f    DYNAMIC     Po1
+  99    0050.569c.2f00    DYNAMIC     Po1
+  99    0050.569c.363d    DYNAMIC     Po1
+  99    0050.569c.5030    DYNAMIC     Po1
+  99    0050.569c.6569    DYNAMIC     Po1
+  99    0050.569c.690c    DYNAMIC     Po1
+  99    0050.569c.6ac3    DYNAMIC     Po1
+  99    0050.569c.7b7f    DYNAMIC     Po1
+  99    0050.569c.7c2c    DYNAMIC     Po1
+  99    0050.569c.7c4d    DYNAMIC     Po1
+  99    0050.569c.9ea5    DYNAMIC     Po1
+  99    0050.569c.b3f2    DYNAMIC     Po1
+  99    0050.569c.b5fe    DYNAMIC     Po1
+  99    0050.569c.ba92    DYNAMIC     Po1
+  99    0050.569c.befc    DYNAMIC     Po1
+  99    0050.569c.dd14    DYNAMIC     Po1
+  99    0050.569c.e3d1    DYNAMIC     Po1
+  99    0050.569c.ed80    DYNAMIC     Po1
+  99    0050.569c.fee1    DYNAMIC     Po1
+  99    0c75.bde4.415d    DYNAMIC     Po1
+  99    2c3e.cff3.6fc1    DYNAMIC     Po1
+  99    2c3e.cff3.7741    DYNAMIC     Po1
+  99    3c51.0e80.a7f0    DYNAMIC     Po1
+  99    3c51.0e80.aac0    DYNAMIC     Po1
+  99    40a6.b7b7.7698    DYNAMIC     Po1
+  99    40a6.b7b7.8488    DYNAMIC     Po1
+  99    4880.0220.a87f    DYNAMIC     Po1
+  99    4880.0220.a888    DYNAMIC     Po1
+  99    4880.0220.a91f    DYNAMIC     Po1
+  99    70da.48d6.8aff    DYNAMIC     Po1
+  99    9433.d8e8.22dd    DYNAMIC     Po1
+  99    9433.d8e8.41dd    DYNAMIC     Po1
+  99    9433.d8e8.505d    DYNAMIC     Po1
+  99    9433.d8e8.515d    DYNAMIC     Po1
+  99    9433.d8e8.545d    DYNAMIC     Po1
+  99    9433.d8e8.655d    DYNAMIC     Po1
+  99    9433.d8e8.96dd    DYNAMIC     Po1
+  99    a0bc.6f2e.25dd    DYNAMIC     Po1
+  99    a0bc.6f2e.38dd    DYNAMIC     Po1
+  99    a0bc.6f2e.445d    DYNAMIC     Po1
+  99    a0bc.6f2e.495d    DYNAMIC     Po1
+  99    a0bc.6f2e.51dd    DYNAMIC     Po1
+  99    a0bc.6f2e.555d    DYNAMIC     Po1
+  99    a0bc.6f2e.5a5d    DYNAMIC     Po1
+  99    a0bc.6f2e.5edd    DYNAMIC     Po1
+  99    a0bc.6f2e.625d    DYNAMIC     Po1
+  99    a0bc.6f2e.63dd    DYNAMIC     Po1
+  99    a0bc.6fe3.837f    DYNAMIC     Po1
+  99    ac7a.56c7.fb85    DYNAMIC     Po1
+  99    b000.b42b.a741    DYNAMIC     Po1
+  99    b000.b474.f041    DYNAMIC     Po1
+  99    b000.b474.f9c1    DYNAMIC     Po1
+  99    b08d.57fa.61dd    DYNAMIC     Po1
+  99    bc16.f54a.3dc1    DYNAMIC     Po1
+   8    0002.d10d.90fe    DYNAMIC     Po1
+   8    0002.d10d.9113    DYNAMIC     Po1
+   8    0002.d10d.9117    DYNAMIC     Po1
+   8    0002.d10d.9127    DYNAMIC     Po1
+   8    0002.d10f.0e1a    DYNAMIC     Po1
+   8    0002.d10f.0e1e    DYNAMIC     Po1
+   8    0002.d10f.2e38    DYNAMIC     Po1
+   8    001a.e80e.6225    DYNAMIC     Gi2/0/20
+   8    001a.e84c.24d2    DYNAMIC     Gi2/0/29
+   8    001a.e84c.2cbc    DYNAMIC     Po1
+   8    001a.e84c.2cc2    DYNAMIC     Gi2/0/25
+   8    001a.e84c.2dd8    DYNAMIC     Gi1/0/27
+   8    001a.e84c.4b40    DYNAMIC     Gi2/0/24
+   8    001a.e891.de78    DYNAMIC     Gi2/0/18
+   8    2088.10e9.93e8    DYNAMIC     Po1
+   8    2088.10ec.7b42    DYNAMIC     Po1
+   8    2088.10ec.7be5    DYNAMIC     Po1
+   8    2088.10ec.7e4a    DYNAMIC     Po1
+   8    4880.0220.a888    DYNAMIC     Po1
+   8    50b3.6300.c1ec    DYNAMIC     Po1
+   8    50b3.6300.c233    DYNAMIC     Po1
+   8    50b3.6300.c7f3    DYNAMIC     Po1
+   8    50b3.6300.ca9a    DYNAMIC     Po1
+   8    50b3.6300.cb30    DYNAMIC     Po1
+   8    50b3.6300.cbfc    DYNAMIC     Po1
+   8    50b3.6300.cc51    DYNAMIC     Po1
+   8    50b3.6300.cc72    DYNAMIC     Po1
+   8    50b3.6300.ce9c    DYNAMIC     Po1
+   8    50b3.6300.d0a8    DYNAMIC     Po1
+   8    50b3.6300.d0d9    DYNAMIC     Po1
+   8    50b3.6300.d18f    DYNAMIC     Po1
+   8    50b3.6300.d236    DYNAMIC     Po1
+   8    50b3.6300.d6e0    DYNAMIC     Gi1/0/35
+   8    50b3.6300.d91b    DYNAMIC     Po1
+   8    50b3.6300.dfee    DYNAMIC     Po1
+   8    60c7.2706.b8f0    DYNAMIC     Po1
+   8    60c7.2706.b8f3    DYNAMIC     Po1
+   8    60c7.2706.b903    DYNAMIC     Po1
+   8    60c7.2709.6c8a    DYNAMIC     Po1
+   8    60c7.2709.8d23    DYNAMIC     Po1
+   8    60c7.2709.8d42    DYNAMIC     Po1
+   8    60c7.2709.8d45    DYNAMIC     Po1
+   8    60c7.2709.8d49    DYNAMIC     Po1
+   8    60c7.2709.8d56    DYNAMIC     Po1
+   8    60c7.2709.8d5d    DYNAMIC     Po1
+   8    60c7.2709.8d64    DYNAMIC     Po1
+   8    60c7.2709.8d6d    DYNAMIC     Po1
+   8    60c7.2709.8d72    DYNAMIC     Gi1/0/40
+   8    60c7.2709.8d76    DYNAMIC     Po1
+   8    60c7.2709.8d85    DYNAMIC     Gi2/0/29
+   8    60c7.2709.8d99    DYNAMIC     Po1
+   8    60c7.2709.8dbd    DYNAMIC     Po1
+   8    60c7.2709.8dc9    DYNAMIC     Po1
+   8    60c7.2709.8dcb    DYNAMIC     Po1
+   8    60c7.2709.8dee    DYNAMIC     Po1
+   8    60c7.2709.8df9    DYNAMIC     Po1
+   8    60c7.2709.8e16    DYNAMIC     Po1
+   8    60c7.2709.8e1d    DYNAMIC     Gi2/0/16
+   8    60c7.2709.8e23    DYNAMIC     Po1
+   8    60c7.2709.8e24    DYNAMIC     Po1
+   8    60c7.2709.8e26    DYNAMIC     Po1
+   8    60c7.2709.8e32    DYNAMIC     Po1
+   8    60c7.2709.8e33    DYNAMIC     Gi1/0/21
+   8    60c7.2709.8e4d    DYNAMIC     Po1
+   8    60c7.2709.8e77    DYNAMIC     Gi2/0/7
+   8    60c7.2709.8e79    DYNAMIC     Po1
+   8    60c7.2709.8e7b    DYNAMIC     Gi1/0/10
+   8    60c7.2709.8e7c    DYNAMIC     Po1
+   8    60c7.2709.8e7e    DYNAMIC     Gi2/0/34
+   8    60c7.2709.8e84    DYNAMIC     Po1
+   8    60c7.2709.8e9d    DYNAMIC     Gi1/0/25
+   8    60c7.2709.8e9e    DYNAMIC     Po1
+   8    60c7.2709.8eab    DYNAMIC     Po1
+   8    60c7.2709.8eb0    DYNAMIC     Po1
+   8    60c7.2709.8eb4    DYNAMIC     Gi2/0/30
+   8    60c7.2709.8eb6    DYNAMIC     Po1
+   8    60c7.2709.8eb8    DYNAMIC     Po1
+   8    60c7.2709.8ebc    DYNAMIC     Po1
+   8    60c7.2709.8ec4    DYNAMIC     Po1
+   8    60c7.2709.8ec6    DYNAMIC     Te2/0/42
+   8    60c7.2709.8ec7    DYNAMIC     Gi1/0/27
+   8    60c7.2709.8ecb    DYNAMIC     Po1
+   8    60c7.2709.8ed3    DYNAMIC     Po1
+   8    60c7.2709.8edc    DYNAMIC     Po1
+   8    60c7.2709.8ee0    DYNAMIC     Po1
+   8    60c7.2709.8eea    DYNAMIC     Po1
+   8    60c7.2709.8f4a    DYNAMIC     Po1
+   8    60c7.2709.8f4f    DYNAMIC     Po1
+   8    60c7.2709.8f55    DYNAMIC     Po1
+   8    60c7.2709.8f60    DYNAMIC     Po1
+   8    60c7.2709.8f61    DYNAMIC     Po1
+   8    60c7.2709.8f66    DYNAMIC     Po1
+   8    60c7.2709.8f6d    DYNAMIC     Po1
+   8    60c7.2709.8f73    DYNAMIC     Po1
+   8    60c7.2709.8f77    DYNAMIC     Gi1/0/11
+   8    60c7.2709.8f78    DYNAMIC     Po1
+   8    60c7.2709.8f79    DYNAMIC     Po1
+   8    60c7.2709.8f7c    DYNAMIC     Po1
+   8    60c7.2709.8f7d    DYNAMIC     Po1
+   8    60c7.2709.8f82    DYNAMIC     Po1
+   8    60c7.2709.8f8a    DYNAMIC     Po1
+   8    60c7.2709.8f9f    DYNAMIC     Po1
+   8    60c7.2709.8fa5    DYNAMIC     Po1
+   8    60c7.2709.8faf    DYNAMIC     Po1
+   8    60c7.2709.8fb9    DYNAMIC     Gi1/0/39
+   8    60c7.2709.8fc4    DYNAMIC     Po1
+   8    60c7.2709.8fc8    DYNAMIC     Po1
+   8    60c7.2709.8fcb    DYNAMIC     Po1
+   8    60c7.2709.8fd0    DYNAMIC     Po1
+   8    60c7.2709.8fd5    DYNAMIC     Po1
+   8    60c7.2709.8fea    DYNAMIC     Po1
+   8    60c7.2709.8fed    DYNAMIC     Gi1/0/4
+   8    60c7.2709.8fee    DYNAMIC     Po1
+   8    60c7.2709.8ffb    DYNAMIC     Te2/0/45
+   8    60c7.2709.900e    DYNAMIC     Gi1/0/5
+   8    60c7.2709.901c    DYNAMIC     Po1
+   8    60c7.2709.9084    DYNAMIC     Po1
+   8    60c7.2709.908d    DYNAMIC     Po1
+   8    60c7.2709.913b    DYNAMIC     Po1
+   8    60c7.2709.9156    DYNAMIC     Po1
+   8    60c7.2709.915e    DYNAMIC     Po1
+   8    60c7.2709.91c3    DYNAMIC     Po1
+   8    60c7.2709.91c5    DYNAMIC     Po1
+   8    60c7.2709.924d    DYNAMIC     Gi2/0/38
+   8    60c7.2709.9401    DYNAMIC     Po1
+   8    60c7.2709.bc34    DYNAMIC     Po1
+   8    60c7.2709.bcd2    DYNAMIC     Po1
+   8    60c7.2709.bcfe    DYNAMIC     Po1
+   8    60c7.2709.bd2f    DYNAMIC     Po1
+   8    60c7.2709.bd3b    DYNAMIC     Po1
+   8    60c7.2709.bd3e    DYNAMIC     Po1
+   8    60c7.2709.bd43    DYNAMIC     Po1
+   8    60c7.2709.bd44    DYNAMIC     Po1
+   8    60c7.2709.bd4e    DYNAMIC     Po1
+   8    60c7.2709.bd5d    DYNAMIC     Po1
+   8    60c7.2709.bd6e    DYNAMIC     Po1
+   8    60c7.2709.be2b    DYNAMIC     Po1
+   8    60c7.2709.be3c    DYNAMIC     Po1
+   8    60c7.2709.be49    DYNAMIC     Po1
+   8    60c7.2709.bf04    DYNAMIC     Po1
+   8    60c7.2709.bf07    DYNAMIC     Po1
+   8    60c7.2709.bf32    DYNAMIC     Po1
+   8    60c7.2709.bf5e    DYNAMIC     Po1
+   8    60c7.2709.bf60    DYNAMIC     Po1
+   8    60c7.2709.bf68    DYNAMIC     Po1
+   8    60c7.2709.bf85    DYNAMIC     Po1
+   8    60c7.2709.bf86    DYNAMIC     Po1
+   8    60c7.2709.bf88    DYNAMIC     Po1
+   8    60c7.2709.bf8c    DYNAMIC     Po1
+   8    60c7.2709.bfc2    DYNAMIC     Po1
+   8    60c7.2709.bfc6    DYNAMIC     Po1
+   8    60c7.2709.bfd0    DYNAMIC     Po1
+   8    60c7.2709.bfd8    DYNAMIC     Po1
+   8    60c7.2709.bfdd    DYNAMIC     Po1
+   8    60c7.2709.bfe5    DYNAMIC     Gi2/0/18
+   8    60c7.2709.bfea    DYNAMIC     Po1
+   8    60c7.2709.c000    DYNAMIC     Po1
+   8    60c7.2709.c004    DYNAMIC     Po1
+   8    60c7.2709.c006    DYNAMIC     Po1
+   8    60c7.2709.c012    DYNAMIC     Po1
+   8    60c7.2709.c017    DYNAMIC     Po1
+   8    60c7.2709.c01d    DYNAMIC     Po1
+   8    60c7.2709.c038    DYNAMIC     Po1
+   8    60c7.2709.c084    DYNAMIC     Po1
+   8    60c7.2709.c092    DYNAMIC     Po1
+   8    60c7.2709.c0a5    DYNAMIC     Po1
+   8    60c7.2709.c0bb    DYNAMIC     Po1
+   8    60c7.2709.c0e2    DYNAMIC     Po1
+   8    60c7.2709.c12c    DYNAMIC     Po1
+   8    60c7.2709.c132    DYNAMIC     Po1
+   8    60c7.2709.c15a    DYNAMIC     Po1
+   8    60c7.2709.c15c    DYNAMIC     Po1
+   8    60c7.2709.c167    DYNAMIC     Po1
+   8    60c7.2709.c17a    DYNAMIC     Po1
+   8    60c7.2709.c1a2    DYNAMIC     Po1
+   8    60c7.2709.c1f6    DYNAMIC     Po1
+   8    60c7.2709.c20c    DYNAMIC     Po1
+   8    60c7.2709.c230    DYNAMIC     Po1
+   8    60c7.2709.c244    DYNAMIC     Po1
+   8    60c7.2709.c246    DYNAMIC     Po1
+   8    60c7.2709.c292    DYNAMIC     Po1
+   8    60c7.2709.c29f    DYNAMIC     Po1
+   8    60c7.2709.f405    DYNAMIC     Po1
+   8    60c7.2709.f40f    DYNAMIC     Po1
+   8    60c7.2709.f434    DYNAMIC     Po1
+   8    60c7.2709.f43a    DYNAMIC     Po1
+   8    60c7.2709.f43c    DYNAMIC     Po1
+   8    60c7.2709.f448    DYNAMIC     Po1
+   8    60c7.2709.f475    DYNAMIC     Po1
+   8    60c7.2709.f47f    DYNAMIC     Po1
+   8    60c7.2709.f481    DYNAMIC     Po1
+   8    60c7.2709.f484    DYNAMIC     Po1
+   8    60c7.2709.f48a    DYNAMIC     Po1
+   8    60c7.2709.f48d    DYNAMIC     Gi1/0/38
+   8    60c7.2709.f48f    DYNAMIC     Po1
+   8    60c7.2709.f4b5    DYNAMIC     Po1
+   8    60c7.2709.f4c6    DYNAMIC     Po1
+   8    60c7.2709.f4db    DYNAMIC     Po1
+   8    60c7.2709.f4dc    DYNAMIC     Po1
+   8    60c7.2709.f4e2    DYNAMIC     Po1
+   8    60c7.2709.f4e6    DYNAMIC     Po1
+   8    60c7.2709.f4ee    DYNAMIC     Gi2/0/31
+   8    60c7.2709.f4f3    DYNAMIC     Po1
+   8    60c7.2709.f4fd    DYNAMIC     Po1
+   8    60c7.2709.f4ff    DYNAMIC     Po1
+   8    60c7.2709.f500    DYNAMIC     Po1
+   8    60c7.2709.f505    DYNAMIC     Po1
+   8    60c7.2709.f51a    DYNAMIC     Po1
+   8    60c7.2709.f51e    DYNAMIC     Po1
+   8    60c7.2709.f521    DYNAMIC     Po1
+   8    60c7.2709.f523    DYNAMIC     Po1
+   8    60c7.2709.f52b    DYNAMIC     Po1
+   8    60c7.2709.f53f    DYNAMIC     Po1
+   8    60c7.2709.f544    DYNAMIC     Po1
+   8    60c7.2709.f546    DYNAMIC     Po1
+   8    60c7.2709.f550    DYNAMIC     Gi2/0/6
+   8    60c7.2709.f552    DYNAMIC     Po1
+   8    60c7.2709.f555    DYNAMIC     Te2/0/41
+   8    60c7.2709.f563    DYNAMIC     Po1
+   8    60c7.2709.f564    DYNAMIC     Po1
+   8    60c7.2709.f574    DYNAMIC     Gi2/0/25
+   8    60c7.2709.f57b    DYNAMIC     Gi2/0/24
+   8    60c7.2709.f580    DYNAMIC     Po1
+   8    60c7.2709.f587    DYNAMIC     Po1
+   8    60c7.2709.f58e    DYNAMIC     Po1
+   8    60c7.2709.f595    DYNAMIC     Po1
+   8    60c7.2709.f59a    DYNAMIC     Gi2/0/23
+   8    60c7.2709.f59b    DYNAMIC     Gi1/0/3
+   8    60c7.2709.f5a9    DYNAMIC     Po1
+   8    60c7.2709.f5b7    DYNAMIC     Po1
+   8    60c7.2709.f5ba    DYNAMIC     Po1
+   8    60c7.2709.f5bf    DYNAMIC     Po1
+   8    60c7.2709.f5c2    DYNAMIC     Po1
+   8    60c7.2709.f5c3    DYNAMIC     Gi2/0/13
+   8    60c7.2709.f5c7    DYNAMIC     Po1
+   8    60c7.2709.f5d5    DYNAMIC     Po1
+   8    60c7.2709.f5dc    DYNAMIC     Po1
+   8    60c7.2709.f615    DYNAMIC     Po1
+   8    60c7.2709.f617    DYNAMIC     Po1
+   8    60c7.2709.f618    DYNAMIC     Po1
+   8    60c7.2709.f619    DYNAMIC     Po1
+   8    60c7.2709.f620    DYNAMIC     Gi2/0/10
+   8    60c7.2709.f633    DYNAMIC     Po1
+   8    60c7.2709.f66b    DYNAMIC     Po1
+   8    60c7.2709.f682    DYNAMIC     Po1
+   8    60c7.2709.f684    DYNAMIC     Gi1/0/12
+   8    60c7.2709.f68c    DYNAMIC     Po1
+   8    60c7.2709.f690    DYNAMIC     Po1
+   8    60c7.2709.f693    DYNAMIC     Po1
+   8    60c7.2709.f6a7    DYNAMIC     Po1
+   8    60c7.2709.f6b1    DYNAMIC     Po1
+   8    60c7.2709.f6c8    DYNAMIC     Po1
+   8    60c7.2709.f6c9    DYNAMIC     Gi2/0/35
+   8    60c7.2709.f6cc    DYNAMIC     Po1
+   8    60c7.2709.f6cd    DYNAMIC     Po1
+   8    60c7.2709.f6ce    DYNAMIC     Po1
+   8    60c7.2709.f6d6    DYNAMIC     Po1
+   8    60c7.2709.f6d8    DYNAMIC     Po1
+   8    60c7.2709.f6e6    DYNAMIC     Po1
+   8    60c7.2709.f6eb    DYNAMIC     Po1
+   8    60c7.2709.f6ed    DYNAMIC     Po1
+   8    60c7.2709.f6f1    DYNAMIC     Po1
+   8    60c7.2709.f6f2    DYNAMIC     Po1
+   8    60c7.2709.f6fc    DYNAMIC     Po1
+   8    60c7.2709.f719    DYNAMIC     Po1
+   8    60c7.2709.f738    DYNAMIC     Po1
+   8    60c7.2709.f73c    DYNAMIC     Po1
+   8    60c7.2709.f73f    DYNAMIC     Po1
+   8    60c7.2709.f742    DYNAMIC     Po1
+   8    60c7.2709.f759    DYNAMIC     Po1
+   8    60c7.2709.f76b    DYNAMIC     Po1
+   8    60c7.2709.f776    DYNAMIC     Gi1/0/20
+   8    60c7.2709.f77c    DYNAMIC     Po1
+   8    60c7.2709.f77d    DYNAMIC     Po1
+   8    60c7.2709.f780    DYNAMIC     Po1
+   8    60c7.2709.f7a0    DYNAMIC     Po1
+   8    60c7.2709.f7a3    DYNAMIC     Po1
+   8    60c7.2709.f7a8    DYNAMIC     Po1
+   8    60c7.2709.f7b3    DYNAMIC     Po1
+   8    60c7.2709.f7b4    DYNAMIC     Po1
+   8    60c7.2709.f7c2    DYNAMIC     Po1
+   8    60c7.2709.f7ca    DYNAMIC     Po1
+   8    60c7.2709.f7cc    DYNAMIC     Po1
+   8    60c7.2709.f7dc    DYNAMIC     Po1
+   8    60c7.2709.f7ee    DYNAMIC     Po1
+   8    60c7.2709.f814    DYNAMIC     Po1
+   8    60c7.2709.f819    DYNAMIC     Po1
+   8    60c7.2709.f835    DYNAMIC     Gi2/0/36
+   8    60c7.2709.f83e    DYNAMIC     Po1
+   8    60c7.2709.f861    DYNAMIC     Po1
+   8    60c7.2709.f88d    DYNAMIC     Po1
+   8    60c7.2709.f899    DYNAMIC     Po1
+   8    60c7.2709.f8a5    DYNAMIC     Po1
+   8    60c7.2709.f8ca    DYNAMIC     Po1
+   8    60c7.2709.f8f0    DYNAMIC     Po1
+   8    60c7.2709.f8ff    DYNAMIC     Po1
+   8    60c7.2709.f90b    DYNAMIC     Po1
+   8    60c7.2709.f928    DYNAMIC     Po1
+   8    60c7.2709.f92a    DYNAMIC     Po1
+   8    60c7.2709.f92c    DYNAMIC     Po1
+   8    60c7.2709.f932    DYNAMIC     Po1
+   8    60c7.2709.f933    DYNAMIC     Po1
+   8    60c7.2709.f943    DYNAMIC     Po1
+   8    60c7.2709.f948    DYNAMIC     Po1
+   8    60c7.2709.f951    DYNAMIC     Po1
+   8    60c7.2709.f958    DYNAMIC     Po1
+   8    60c7.2709.f95b    DYNAMIC     Po1
+   8    60c7.2709.f960    DYNAMIC     Po1
+   8    60c7.2709.f968    DYNAMIC     Po1
+   8    60c7.2709.f96b    DYNAMIC     Po1
+   8    60c7.2709.f97f    DYNAMIC     Po1
+   8    60c7.2709.f987    DYNAMIC     Po1
+   8    60c7.2709.f98c    DYNAMIC     Po1
+   8    60c7.2709.f98d    DYNAMIC     Po1
+   8    60c7.2709.f995    DYNAMIC     Gi1/0/2
+   8    60c7.2709.f99c    DYNAMIC     Po1
+   8    60c7.2709.f9a7    DYNAMIC     Gi1/0/8
+   8    60c7.2709.f9a8    DYNAMIC     Po1
+   8    60c7.2709.f9b5    DYNAMIC     Gi2/0/28
+   8    60c7.2709.f9bc    DYNAMIC     Po1
+   8    60c7.2709.f9be    DYNAMIC     Gi2/0/5
+   8    60c7.2709.f9e5    DYNAMIC     Po1
+   8    60c7.2709.f9ed    DYNAMIC     Gi2/0/8
+   8    60c7.2709.f9f1    DYNAMIC     Po1
+   8    60c7.270c.1ceb    DYNAMIC     Po1
+   8    60c7.270c.1d62    DYNAMIC     Po1
+   8    60c7.270c.1d93    DYNAMIC     Po1
+   8    60c7.270c.1d97    DYNAMIC     Po1
+   8    60c7.270c.1d99    DYNAMIC     Po1
+   8    60c7.270c.1dc4    DYNAMIC     Po1
+   8    60c7.270c.1df4    DYNAMIC     Po1
+   8    60c7.270c.1dfd    DYNAMIC     Po1
+   8    60c7.270c.1e00    DYNAMIC     Po1
+   8    60c7.270c.1e02    DYNAMIC     Po1
+   8    60c7.270c.1e05    DYNAMIC     Po1
+   8    60c7.270c.1e0d    DYNAMIC     Gi1/0/24
+   8    60c7.270c.1e11    DYNAMIC     Po1
+   8    60c7.270c.1e48    DYNAMIC     Gi2/0/20
+   8    60c7.270c.1e60    DYNAMIC     Po1
+   8    60c7.270c.1e93    DYNAMIC     Po1
+   8    60c7.270c.1ea1    DYNAMIC     Po1
+   8    60c7.270c.1ea4    DYNAMIC     Po1
+   8    60c7.270c.1eb9    DYNAMIC     Po1
+   8    60c7.270c.1f26    DYNAMIC     Po1
+   8    60c7.270c.1f3d    DYNAMIC     Po1
+   8    60c7.270c.1f40    DYNAMIC     Po1
+   8    60c7.270c.1f43    DYNAMIC     Po1
+   8    60c7.270c.1fa9    DYNAMIC     Po1
+   8    60c7.270c.1fba    DYNAMIC     Po1
+   8    60c7.270c.2004    DYNAMIC     Po1
+   8    60c7.270c.2043    DYNAMIC     Po1
+   8    60c7.270c.2074    DYNAMIC     Po1
+   8    60c7.270c.2095    DYNAMIC     Po1
+   8    60c7.270c.209b    DYNAMIC     Po1
+   8    60c7.270c.20a3    DYNAMIC     Po1
+   8    60c7.270c.2132    DYNAMIC     Po1
+   8    60c7.270c.2148    DYNAMIC     Po1
+   8    60c7.270c.228a    DYNAMIC     Po1
+   8    60c7.270c.2f8b    DYNAMIC     Po1
+   8    60c7.270c.2f8e    DYNAMIC     Po1
+   8    60c7.270c.2f8f    DYNAMIC     Po1
+   8    60c7.270c.2f95    DYNAMIC     Po1
+   8    60c7.270c.2f96    DYNAMIC     Po1
+   8    60c7.270c.2fad    DYNAMIC     Po1
+   8    60c7.270c.2fde    DYNAMIC     Po1
+   8    60c7.270c.3042    DYNAMIC     Po1
+   8    60c7.270c.307d    DYNAMIC     Po1
+   8    60c7.270c.3082    DYNAMIC     Po1
+   8    60c7.270c.308a    DYNAMIC     Po1
+   8    60c7.270c.308c    DYNAMIC     Po1
+   8    60c7.270c.308d    DYNAMIC     Po1
+   8    60c7.270c.308e    DYNAMIC     Po1
+   8    60c7.270c.309f    DYNAMIC     Po1
+   8    60c7.270c.30b4    DYNAMIC     Po1
+   8    60c7.270c.30b8    DYNAMIC     Po1
+   8    60c7.270c.30c1    DYNAMIC     Po1
+   8    60c7.270c.30c7    DYNAMIC     Po1
+   8    60c7.270c.30c8    DYNAMIC     Po1
+   8    60c7.270c.30d0    DYNAMIC     Po1
+   8    60c7.270c.30d5    DYNAMIC     Po1
+   8    60c7.270c.30e4    DYNAMIC     Po1
+   8    60c7.270c.30e5    DYNAMIC     Po1
+   8    60c7.270c.30ea    DYNAMIC     Po1
+   8    60c7.270c.30f0    DYNAMIC     Po1
+   8    60c7.270c.30fa    DYNAMIC     Po1
+   8    60c7.270c.30fe    DYNAMIC     Po1
+   8    60c7.270c.314a    DYNAMIC     Po1
+   8    60c7.270c.314b    DYNAMIC     Po1
+   8    60c7.270c.3157    DYNAMIC     Po1
+   8    60c7.270c.315f    DYNAMIC     Po1
+   8    60c7.270c.3168    DYNAMIC     Po1
+   8    60c7.270c.31a1    DYNAMIC     Po1
+   8    60c7.270c.31b3    DYNAMIC     Po1
+   8    60c7.270c.31ec    DYNAMIC     Po1
+   8    60c7.270c.31ed    DYNAMIC     Po1
+   8    60c7.270c.31f8    DYNAMIC     Po1
+   8    60c7.270c.31fa    DYNAMIC     Po1
+   8    60c7.270c.31fc    DYNAMIC     Po1
+   8    60c7.270c.3202    DYNAMIC     Po1
+   8    60c7.270c.3215    DYNAMIC     Po1
+   8    60c7.270c.3217    DYNAMIC     Po1
+   8    60c7.270c.322d    DYNAMIC     Po1
+   8    60c7.270c.322e    DYNAMIC     Po1
+   8    60c7.270c.3231    DYNAMIC     Po1
+   8    60c7.270c.3237    DYNAMIC     Po1
+   8    60c7.270c.3248    DYNAMIC     Po1
+   8    60c7.270c.324a    DYNAMIC     Po1
+   8    60c7.270c.324f    DYNAMIC     Po1
+   8    60c7.270c.3256    DYNAMIC     Po1
+   8    60c7.270c.3266    DYNAMIC     Po1
+   8    60c7.270c.3268    DYNAMIC     Po1
+   8    60c7.270c.326c    DYNAMIC     Po1
+   8    60c7.270c.3273    DYNAMIC     Po1
+   8    60c7.270c.327c    DYNAMIC     Po1
+   8    60c7.270c.329a    DYNAMIC     Po1
+   8    60c7.270c.329b    DYNAMIC     Po1
+   8    60c7.270c.329d    DYNAMIC     Po1
+   8    60c7.270c.329e    DYNAMIC     Po1
+   8    60c7.270c.32a0    DYNAMIC     Po1
+   8    60c7.270c.32a8    DYNAMIC     Po1
+   8    60c7.270c.32ac    DYNAMIC     Po1
+   8    60c7.270c.32ae    DYNAMIC     Po1
+   8    60c7.270c.32cb    DYNAMIC     Po1
+   8    60c7.270c.32d3    DYNAMIC     Po1
+   8    60c7.270c.32e0    DYNAMIC     Po1
+   8    60c7.270c.32e6    DYNAMIC     Po1
+   8    60c7.270c.32e7    DYNAMIC     Po1
+   8    60c7.270c.32ef    DYNAMIC     Po1
+   8    60c7.270c.32f7    DYNAMIC     Po1
+   8    60c7.270c.32f8    DYNAMIC     Po1
+   8    60c7.270c.32fc    DYNAMIC     Po1
+   8    60c7.270c.3306    DYNAMIC     Po1
+   8    60c7.270c.3316    DYNAMIC     Po1
+   8    60c7.270c.3358    DYNAMIC     Po1
+   8    60c7.270c.35d0    DYNAMIC     Po1
+   8    60c7.270c.35db    DYNAMIC     Po1
+   8    60c7.270c.35ea    DYNAMIC     Po1
+   8    60c7.270c.35ed    DYNAMIC     Po1
+   8    60c7.270c.35ef    DYNAMIC     Po1
+   8    60c7.270c.35f1    DYNAMIC     Po1
+   8    60c7.270c.35f6    DYNAMIC     Po1
+   8    60c7.270c.35ff    DYNAMIC     Po1
+   8    60c7.270c.3600    DYNAMIC     Po1
+   8    60c7.270c.3607    DYNAMIC     Po1
+   8    60c7.270c.3608    DYNAMIC     Po1
+   8    60c7.270c.360a    DYNAMIC     Po1
+   8    60c7.270c.3612    DYNAMIC     Po1
+   8    60c7.270c.3623    DYNAMIC     Po1
+   8    60c7.270c.362d    DYNAMIC     Po1
+   8    60c7.270c.362e    DYNAMIC     Po1
+   8    60c7.270c.363a    DYNAMIC     Po1
+   8    60c7.270c.363d    DYNAMIC     Po1
+   8    60c7.270c.3645    DYNAMIC     Po1
+   8    60c7.270c.364a    DYNAMIC     Po1
+   8    60c7.270c.3652    DYNAMIC     Po1
+   8    60c7.270c.3661    DYNAMIC     Po1
+   8    60c7.270c.3662    DYNAMIC     Po1
+   8    60c7.270c.3665    DYNAMIC     Po1
+   8    60c7.270c.367e    DYNAMIC     Po1
+   8    60c7.270c.3690    DYNAMIC     Po1
+   8    60c7.270c.3694    DYNAMIC     Po1
+   8    60c7.270c.3710    DYNAMIC     Po1
+   8    60c7.270c.3711    DYNAMIC     Po1
+   8    60c7.270c.3794    DYNAMIC     Po1
+   8    60c7.270c.3796    DYNAMIC     Po1
+   8    60c7.270c.379a    DYNAMIC     Po1
+   8    60c7.270c.b8c7    DYNAMIC     Po1
+   8    60c7.270c.bc20    DYNAMIC     Po1
+   8    60c7.270c.bc29    DYNAMIC     Po1
+   8    60c7.270c.bc35    DYNAMIC     Po1
+   8    60c7.270c.bc3d    DYNAMIC     Po1
+   8    60c7.270c.bc3f    DYNAMIC     Po1
+   8    60c7.270c.bc5f    DYNAMIC     Po1
+   8    60c7.270c.bc64    DYNAMIC     Po1
+   8    60c7.270c.bc72    DYNAMIC     Po1
+   8    60c7.270c.bc7d    DYNAMIC     Po1
+   8    60c7.270c.bc89    DYNAMIC     Po1
+   8    60c7.270c.bc8c    DYNAMIC     Po1
+   8    60c7.270c.bc90    DYNAMIC     Po1
+   8    60c7.270c.bc91    DYNAMIC     Po1
+   8    60c7.270c.bc9f    DYNAMIC     Po1
+   8    60c7.270c.bca0    DYNAMIC     Po1
+   8    60c7.270c.bca6    DYNAMIC     Po1
+   8    60c7.270c.bcab    DYNAMIC     Po1
+   8    60c7.270c.bcac    DYNAMIC     Po1
+   8    60c7.270c.bcb7    DYNAMIC     Po1
+   8    60c7.270c.bd05    DYNAMIC     Po1
+   8    60c7.270c.bd07    DYNAMIC     Po1
+   8    60c7.270c.bd0a    DYNAMIC     Po1
+   8    60c7.270c.bd0f    DYNAMIC     Po1
+   8    60c7.270c.bd11    DYNAMIC     Po1
+   8    60c7.270c.bd16    DYNAMIC     Po1
+   8    60c7.270c.bd17    DYNAMIC     Po1
+   8    60c7.270c.bd19    DYNAMIC     Po1
+   8    60c7.270c.bd1a    DYNAMIC     Po1
+   8    60c7.270c.bd27    DYNAMIC     Po1
+   8    60c7.270c.bd2b    DYNAMIC     Po1
+   8    60c7.270c.bd2e    DYNAMIC     Po1
+   8    60c7.270c.bd3d    DYNAMIC     Po1
+   8    60c7.270c.bd41    DYNAMIC     Po1
+   8    60c7.270c.bd7c    DYNAMIC     Po1
+   8    60c7.270c.d850    DYNAMIC     Po1
+   8    60c7.270f.588b    DYNAMIC     Po1
+   8    60c7.270f.588d    DYNAMIC     Po1
+   8    60c7.270f.58a2    DYNAMIC     Po1
+   8    641c.678c.8ed1    DYNAMIC     Po1
+   8    641c.678e.029b    DYNAMIC     Po1
+   8    641c.678e.5577    DYNAMIC     Po1
+   8    70da.48d6.8aff    DYNAMIC     Po1
+   8    74e6.e2dd.8f3d    DYNAMIC     Po1
+   8    8425.1912.684e    DYNAMIC     Gi2/0/3
+   8    8425.1914.314f    DYNAMIC     Po1
+   8    8425.191d.9fb0    DYNAMIC     Po1
+   8    8425.191d.a0f7    DYNAMIC     Gi1/0/7
+   8    8425.191d.a2c2    DYNAMIC     Po1
+   8    8425.191d.a36d    DYNAMIC     Po1
+   8    8425.191d.a37e    DYNAMIC     Po1
+   8    8425.191d.a44a    DYNAMIC     Gi1/0/14
+   8    8425.191d.a472    DYNAMIC     Po1
+   8    8425.191d.a482    DYNAMIC     Gi2/0/12
+   8    8425.191d.a493    DYNAMIC     Gi1/0/13
+   8    8425.191d.a570    DYNAMIC     Po1
+   8    8425.191d.a57b    DYNAMIC     Po1
+   8    8425.191d.a5de    DYNAMIC     Po1
+   8    8425.191d.a672    DYNAMIC     Gi1/0/22
+   8    8425.191d.c776    DYNAMIC     Po1
+   8    8425.191d.c7c3    DYNAMIC     Po1
+   8    8425.191d.c93d    DYNAMIC     Po1
+   8    8425.191d.c962    DYNAMIC     Po1
+   8    8425.191d.c9d6    DYNAMIC     Po1
+   8    8425.191d.ca1a    DYNAMIC     Po1
+   8    8425.191d.e9f3    DYNAMIC     Po1
+   8    8425.1928.2926    DYNAMIC     Po1
+   8    8425.1928.f8b9    DYNAMIC     Po1
+   8    8425.1929.dc08    DYNAMIC     Po1
+   8    8425.1929.dc27    DYNAMIC     Po1
+   8    8425.192d.1662    DYNAMIC     Po1
+   8    8425.1954.f3fc    DYNAMIC     Po1
+   8    8425.1954.f41c    DYNAMIC     Po1
+   8    8469.93da.67d3    DYNAMIC     Po1
+   8    8469.93dc.7d0d    DYNAMIC     Po1
+   8    8469.93dd.6a93    DYNAMIC     Po1
+   8    8469.93dd.ba73    DYNAMIC     Po1
+   8    a83c.a51d.d247    DYNAMIC     Po1
+   8    c018.0355.0ad4    DYNAMIC     Po1
+   8    c828.e56c.05fc    DYNAMIC     Po1
+   8    c828.e56c.5e90    DYNAMIC     Po1
+   8    c828.e56c.7f8c    DYNAMIC     Po1
+   8    c828.e56e.befc    DYNAMIC     Po1
+   8    c828.e56e.cfe0    DYNAMIC     Po1
+   8    c828.e56e.d2e8    DYNAMIC     Po1
+   8    c828.e56e.d6e4    DYNAMIC     Po1
+   8    c828.e56e.d898    DYNAMIC     Po1
+   8    c828.e56e.dd18    DYNAMIC     Po1
+   8    c828.e56e.dd24    DYNAMIC     Po1
+   8    c828.e56e.dd88    DYNAMIC     Po1
+   8    c828.e56f.84f8    DYNAMIC     Po1
+ 113    001a.e80e.6225    DYNAMIC     Gi2/0/20
+ 113    001a.e84b.f40c    DYNAMIC     Gi1/0/20
+ 113    001a.e84c.05df    DYNAMIC     Gi2/0/35
+ 113    001a.e84c.20eb    DYNAMIC     Gi2/0/8
+ 113    001a.e84c.2107    DYNAMIC     Gi2/0/10
+ 113    001a.e84c.2123    DYNAMIC     Po1
+ 113    001a.e84c.2135    DYNAMIC     Po1
+ 113    001a.e84c.213f    DYNAMIC     Gi2/0/36
+ 113    001a.e84c.215c    DYNAMIC     Po1
+ 113    001a.e84c.2306    DYNAMIC     Gi1/0/39
+ 113    001a.e84c.230f    DYNAMIC     Gi2/0/5
+ 113    001a.e84c.2377    DYNAMIC     Gi1/0/4
+ 113    001a.e84c.23b0    DYNAMIC     Gi2/0/16
+ 113    001a.e84c.23b5    DYNAMIC     Po1
+ 113    001a.e84c.2413    DYNAMIC     Gi1/0/33
+ 113    001a.e84c.243c    DYNAMIC     Gi2/0/38
+ 113    001a.e84c.248f    DYNAMIC     Po1
+ 113    001a.e84c.24d2    DYNAMIC     Gi2/0/29
+ 113    001a.e84c.2536    DYNAMIC     Gi1/0/8
+ 113    001a.e84c.2587    DYNAMIC     Po1
+ 113    001a.e84c.261f    DYNAMIC     Po1
+ 113    001a.e84c.26eb    DYNAMIC     Gi2/0/7
+ 113    001a.e84c.26f6    DYNAMIC     Gi2/0/1
+ 113    001a.e84c.2706    DYNAMIC     Po1
+ 113    001a.e84c.2789    DYNAMIC     Te1/0/47
+ 113    001a.e84c.2c0b    DYNAMIC     Po1
+ 113    001a.e84c.2c25    DYNAMIC     Gi1/0/13
+ 113    001a.e84c.2c44    DYNAMIC     Te2/0/45
+ 113    001a.e84c.2c71    DYNAMIC     Po1
+ 113    001a.e84c.2c8d    DYNAMIC     Te2/0/41
+ 113    001a.e84c.2c90    DYNAMIC     Gi1/0/25
+ 113    001a.e84c.2ca8    DYNAMIC     Gi1/0/7
+ 113    001a.e84c.2cc2    DYNAMIC     Gi2/0/25
+ 113    001a.e84c.2cfa    DYNAMIC     Te2/0/42
+ 113    001a.e84c.2cfe    DYNAMIC     Gi2/0/30
+ 113    001a.e84c.2cff    DYNAMIC     Gi1/0/12
+ 113    001a.e84c.2d07    DYNAMIC     Gi2/0/31
+ 113    001a.e84c.2d16    DYNAMIC     Po1
+ 113    001a.e84c.2d28    DYNAMIC     Gi1/0/36
+ 113    001a.e84c.2d68    DYNAMIC     Gi1/0/40
+ 113    001a.e84c.2d77    DYNAMIC     Gi2/0/6
+ 113    001a.e84c.2dd8    DYNAMIC     Gi1/0/27
+ 113    001a.e84c.32c1    DYNAMIC     Gi1/0/10
+ 113    001a.e84c.33a4    DYNAMIC     Po1
+ 113    001a.e84c.33ef    DYNAMIC     Po1
+ 113    001a.e84c.341e    DYNAMIC     Po1
+ 113    001a.e84c.378f    DYNAMIC     Po1
+ 113    001a.e84c.37b4    DYNAMIC     Po1
+ 113    001a.e84c.3bda    DYNAMIC     Gi1/0/11
+ 113    001a.e84c.3bed    DYNAMIC     Po1
+ 113    001a.e84c.3cc0    DYNAMIC     Gi1/0/21
+ 113    001a.e84c.4b40    DYNAMIC     Gi2/0/24
+ 113    001a.e84c.4b6d    DYNAMIC     Po1
+ 113    001a.e84c.4baa    DYNAMIC     Po1
+ 113    001a.e868.e0d1    DYNAMIC     Po1
+ 113    001a.e86c.f163    DYNAMIC     Po1
+ 113    001a.e891.de78    DYNAMIC     Gi2/0/18
+ 113    001a.e896.2309    DYNAMIC     Po1
+ 113    001a.e897.a69a    DYNAMIC     Po1
+ 113    4880.0220.a888    DYNAMIC     Po1
+ 113    70da.48d6.8aff    DYNAMIC     Po1
+  55    0015.5d1f.2409    DYNAMIC     Po1
+  55    24d7.9c3e.1acc    DYNAMIC     Po1
+  55    24d7.9c8c.57b0    DYNAMIC     Po1
+  55    24d7.9c8c.8388    DYNAMIC     Po1
+  55    24d7.9cbc.112c    DYNAMIC     Po1
+  55    24d7.9cbc.2418    DYNAMIC     Po1
+  55    24d7.9cbc.3324    DYNAMIC     Po1
+  55    24d7.9cbc.41e8    DYNAMIC     Po1
+  55    24d7.9cbc.8dac    DYNAMIC     Po1
+  55    24d7.9cbd.4ed8    DYNAMIC     Po1
+  55    4880.0220.a888    DYNAMIC     Po1
+  55    648f.3e83.f98b    DYNAMIC     Po1
+  55    6c8d.77f0.025c    DYNAMIC     Po1
+  55    70da.48d6.8aff    DYNAMIC     Po1
+  55    a00f.378e.e294    DYNAMIC     Po1
+  55    c828.e51c.53b0    DYNAMIC     Po1
+  55    c828.e51c.5750    DYNAMIC     Po1
+  55    c828.e51c.5cc0    DYNAMIC     Po1
+  55    c828.e51c.5d58    DYNAMIC     Po1
+  55    c828.e51c.5fcc    DYNAMIC     Po1
+  55    c828.e51c.6018    DYNAMIC     Po1
+  55    c828.e51c.64e4    DYNAMIC     Po1
+  55    c828.e51c.78c0    DYNAMIC     Po1
+  55    c828.e51c.7c40    DYNAMIC     Po1
+  55    c828.e51c.8084    DYNAMIC     Po1
+  55    c828.e51c.87dc    DYNAMIC     Po1
+  55    c828.e51c.b314    DYNAMIC     Po1
+  55    c828.e51c.b378    DYNAMIC     Po1
+  55    c828.e51c.bff0    DYNAMIC     Po1
+  55    c828.e51c.c0d0    DYNAMIC     Po1
+  55    c828.e51d.6c50    DYNAMIC     Po1
+  55    c828.e51d.6c58    DYNAMIC     Po1
+  55    c828.e51d.6e28    DYNAMIC     Po1
+  55    c828.e51d.6ec8    DYNAMIC     Po1
+  55    c828.e51d.7c5c    DYNAMIC     Po1
+  55    c828.e51d.7eb4    DYNAMIC     Po1
+  55    c828.e51d.7f40    DYNAMIC     Po1
+  55    c828.e51d.8338    DYNAMIC     Po1
+  55    c828.e51d.856c    DYNAMIC     Po1
+  55    c828.e51d.8720    DYNAMIC     Po1
+  55    c828.e51d.8a14    DYNAMIC     Po1
+  55    c828.e51d.8c98    DYNAMIC     Po1
+  55    c828.e51d.92e8    DYNAMIC     Po1
+  55    c828.e51d.934c    DYNAMIC     Po1
+  55    c828.e51d.93b4    DYNAMIC     Po1
+  55    c828.e51d.93d4    DYNAMIC     Po1
+  55    c828.e51d.9774    DYNAMIC     Po1
+  55    c828.e51d.9c78    DYNAMIC     Po1
+  55    c828.e51d.9c80    DYNAMIC     Po1
+  55    c828.e51d.a5a8    DYNAMIC     Po1
+  55    c828.e51d.a9a0    DYNAMIC     Po1
+  55    c828.e51d.aa70    DYNAMIC     Po1
+  55    c828.e51d.bcf8    DYNAMIC     Po1
+  55    c828.e51d.be2c    DYNAMIC     Te1/0/43
+  55    c828.e51d.c0f4    DYNAMIC     Po1
+  55    c828.e51d.c154    DYNAMIC     Po1
+  55    c828.e51d.c6f8    DYNAMIC     Po1
+  55    c828.e51d.cd94    DYNAMIC     Po1
+  55    c828.e56c.0100    DYNAMIC     Po1
+  55    c828.e56c.01ac    DYNAMIC     Po1
+  55    c828.e56c.0434    DYNAMIC     Po1
+  55    c828.e56c.0590    DYNAMIC     Po1
+  55    c828.e56c.05e0    DYNAMIC     Po1
+  55    c828.e56c.07a0    DYNAMIC     Po1
+  55    c828.e56c.07e8    DYNAMIC     Po1
+  55    c828.e56c.0980    DYNAMIC     Po1
+  55    c828.e56c.0a24    DYNAMIC     Po1
+  55    c828.e56c.0a64    DYNAMIC     Po1
+  55    c828.e56c.0abc    DYNAMIC     Po1
+  55    c828.e56c.0ae8    DYNAMIC     Po1
+  55    c828.e56c.0be8    DYNAMIC     Po1
+  55    c828.e56c.0ce4    DYNAMIC     Po1
+  55    c828.e56c.0df4    DYNAMIC     Po1
+  55    c828.e56c.0e6c    DYNAMIC     Po1
+  55    c828.e56c.0f68    DYNAMIC     Po1
+  55    c828.e56c.0f8c    DYNAMIC     Po1
+  55    c828.e56c.0fc8    DYNAMIC     Po1
+  55    c828.e56c.1004    DYNAMIC     Po1
+  55    c828.e56c.1080    DYNAMIC     Po1
+  55    c828.e56c.10f0    DYNAMIC     Po1
+  55    c828.e56c.1108    DYNAMIC     Po1
+  55    c828.e56c.1158    DYNAMIC     Po1
+  55    c828.e56c.1170    DYNAMIC     Po1
+  55    c828.e56c.11d4    DYNAMIC     Po1
+  55    c828.e56c.11dc    DYNAMIC     Po1
+  55    c828.e56c.1248    DYNAMIC     Po1
+  55    c828.e56c.1310    DYNAMIC     Po1
+  55    c828.e56c.1324    DYNAMIC     Po1
+  55    c828.e56c.1410    DYNAMIC     Po1
+  55    c828.e56c.163c    DYNAMIC     Po1
+  55    c828.e56c.165c    DYNAMIC     Po1
+  55    c828.e56c.1754    DYNAMIC     Po1
+  55    c828.e56c.1804    DYNAMIC     Po1
+  55    c828.e56c.1840    DYNAMIC     Po1
+  55    c828.e56c.1894    DYNAMIC     Po1
+  55    c828.e56c.189c    DYNAMIC     Po1
+  55    c828.e56c.19b8    DYNAMIC     Po1
+  55    c828.e56c.22c8    DYNAMIC     Po1
+  55    c828.e56c.2348    DYNAMIC     Po1
+  55    c828.e56c.2400    DYNAMIC     Po1
+  55    c828.e56c.247c    DYNAMIC     Po1
+  55    c828.e56c.24a8    DYNAMIC     Po1
+  55    c828.e56c.2598    DYNAMIC     Po1
+  55    c828.e56c.25f8    DYNAMIC     Po1
+  55    c828.e56c.2628    DYNAMIC     Po1
+  55    c828.e56c.26ac    DYNAMIC     Po1
+  55    c828.e56c.26d8    DYNAMIC     Po1
+  55    c828.e56c.27b4    DYNAMIC     Po1
+  55    c828.e56c.27f4    DYNAMIC     Po1
+  55    c828.e56c.28a0    DYNAMIC     Po1
+  55    c828.e56c.28bc    DYNAMIC     Po1
+  55    c828.e56c.2914    DYNAMIC     Po1
+  55    c828.e56c.29a0    DYNAMIC     Po1
+  55    c828.e56c.29d4    DYNAMIC     Po1
+  55    c828.e56c.2af4    DYNAMIC     Po1
+  55    c828.e56c.2bb0    DYNAMIC     Po1
+  55    c828.e56c.2be0    DYNAMIC     Po1
+  55    c828.e56c.2c2c    DYNAMIC     Po1
+  55    c828.e56c.2c78    DYNAMIC     Po1
+  55    c828.e56c.2cfc    DYNAMIC     Po1
+  55    c828.e56c.2d38    DYNAMIC     Po1
+  55    c828.e56c.2d64    DYNAMIC     Po1
+  55    c828.e56c.2d78    DYNAMIC     Po1
+  55    c828.e56c.2d9c    DYNAMIC     Po1
+  55    c828.e56c.2de4    DYNAMIC     Po1
+  55    c828.e56c.2ea8    DYNAMIC     Po1
+  55    c828.e56c.2f04    DYNAMIC     Po1
+  55    c828.e56c.2f28    DYNAMIC     Po1
+  55    c828.e56c.2f3c    DYNAMIC     Po1
+  55    c828.e56c.2f44    DYNAMIC     Po1
+  55    c828.e56c.2f7c    DYNAMIC     Po1
+  55    c828.e56c.2f9c    DYNAMIC     Po1
+  55    c828.e56c.2fdc    DYNAMIC     Po1
+  55    c828.e56c.2ffc    DYNAMIC     Po1
+  55    c828.e56c.3088    DYNAMIC     Po1
+  55    c828.e56c.309c    DYNAMIC     Po1
+  55    c828.e56c.30b0    DYNAMIC     Po1
+  55    c828.e56c.3104    DYNAMIC     Po1
+  55    c828.e56c.315c    DYNAMIC     Po1
+  55    c828.e56c.3174    DYNAMIC     Po1
+  55    c828.e56c.31cc    DYNAMIC     Po1
+  55    c828.e56c.32f8    DYNAMIC     Po1
+  55    c828.e56c.3320    DYNAMIC     Po1
+  55    c828.e56c.3354    DYNAMIC     Po1
+  55    c828.e56c.341c    DYNAMIC     Po1
+  55    c828.e56c.34dc    DYNAMIC     Po1
+  55    c828.e56c.3500    DYNAMIC     Po1
+  55    c828.e56c.359c    DYNAMIC     Po1
+  55    c828.e56c.36f0    DYNAMIC     Po1
+  55    c828.e56c.3830    DYNAMIC     Po1
+  55    c828.e56c.41bc    DYNAMIC     Po1
+  55    c828.e56c.42c8    DYNAMIC     Po1
+  55    c828.e56c.43a0    DYNAMIC     Po1
+  55    c828.e56c.44f0    DYNAMIC     Po1
+  55    c828.e56c.483c    DYNAMIC     Po1
+  55    c828.e56c.4984    DYNAMIC     Po1
+  55    c828.e56c.4c0c    DYNAMIC     Po1
+  55    c828.e56c.5b8c    DYNAMIC     Po1
+  55    c828.e56c.5c68    DYNAMIC     Po1
+  55    c828.e56c.5ebc    DYNAMIC     Po1
+  55    c828.e56c.629c    DYNAMIC     Po1
+  55    c828.e56c.63d8    DYNAMIC     Po1
+  55    c828.e56c.67c4    DYNAMIC     Po1
+  55    c828.e56c.6970    DYNAMIC     Po1
+  55    c828.e56c.69f0    DYNAMIC     Po1
+  55    c828.e56c.6a2c    DYNAMIC     Po1
+  55    c828.e56c.6a94    DYNAMIC     Po1
+  55    c828.e56c.6b1c    DYNAMIC     Po1
+  55    c828.e56c.6b9c    DYNAMIC     Po1
+  55    c828.e56c.6c30    DYNAMIC     Po1
+  55    c828.e56c.6db8    DYNAMIC     Po1
+  55    c828.e56c.70a4    DYNAMIC     Po1
+  55    c828.e56c.7178    DYNAMIC     Po1
+  55    c828.e56c.7280    DYNAMIC     Po1
+  55    c828.e56c.72a8    DYNAMIC     Po1
+  55    c828.e56c.72c0    DYNAMIC     Po1
+  55    c828.e56c.72e4    DYNAMIC     Po1
+  55    c828.e56c.7648    DYNAMIC     Po1
+  55    c828.e56c.7768    DYNAMIC     Po1
+  55    c828.e56c.77f8    DYNAMIC     Po1
+  55    c828.e56c.7974    DYNAMIC     Po1
+  55    c828.e56c.79a8    DYNAMIC     Po1
+  55    c828.e56c.7a20    DYNAMIC     Po1
+  55    c828.e56c.7af4    DYNAMIC     Po1
+  55    c828.e56c.7afc    DYNAMIC     Po1
+  55    c828.e56c.7b84    DYNAMIC     Po1
+  55    c828.e56c.7c3c    DYNAMIC     Po1
+  55    c828.e56c.7c40    DYNAMIC     Po1
+  55    c828.e56c.7c44    DYNAMIC     Po1
+  55    c828.e56c.7c4c    DYNAMIC     Po1
+  55    c828.e56c.7c64    DYNAMIC     Po1
+  55    c828.e56c.7c74    DYNAMIC     Po1
+  55    c828.e56c.7c7c    DYNAMIC     Po1
+  55    c828.e56c.7cc0    DYNAMIC     Po1
+  55    c828.e56c.7d30    DYNAMIC     Po1
+  55    c828.e56c.7d34    DYNAMIC     Po1
+  55    c828.e56c.7d58    DYNAMIC     Po1
+  55    c828.e56c.7d74    DYNAMIC     Po1
+  55    c828.e56c.7d88    DYNAMIC     Po1
+  55    c828.e56c.7e34    DYNAMIC     Po1
+  55    c828.e56c.7e50    DYNAMIC     Po1
+  55    c828.e56c.7e5c    DYNAMIC     Po1
+  55    c828.e56c.7ec8    DYNAMIC     Po1
+  55    c828.e56c.7ed4    DYNAMIC     Po1
+  55    c828.e56c.7ef4    DYNAMIC     Po1
+  55    c828.e56c.7f10    DYNAMIC     Po1
+  55    c828.e56c.7f48    DYNAMIC     Po1
+  55    c828.e56c.7f60    DYNAMIC     Po1
+  55    c828.e56c.7f6c    DYNAMIC     Po1
+  55    c828.e56c.7f78    DYNAMIC     Po1
+  55    c828.e56c.7f7c    DYNAMIC     Po1
+  55    c828.e56c.7f94    DYNAMIC     Po1
+  55    c828.e56c.7fa8    DYNAMIC     Po1
+  55    c828.e56c.8058    DYNAMIC     Po1
+  55    c828.e56c.8070    DYNAMIC     Po1
+  55    c828.e56c.808c    DYNAMIC     Po1
+  55    c828.e56c.8094    DYNAMIC     Po1
+  55    c828.e56c.8098    DYNAMIC     Po1
+  55    c828.e56c.809c    DYNAMIC     Po1
+  55    c828.e56c.80a4    DYNAMIC     Po1
+  55    c828.e56c.80b0    DYNAMIC     Po1
+  55    c828.e56c.80c8    DYNAMIC     Po1
+  55    c828.e56c.8100    DYNAMIC     Po1
+  55    c828.e56c.8108    DYNAMIC     Po1
+  55    c828.e56c.8114    DYNAMIC     Po1
+  55    c828.e56c.8130    DYNAMIC     Po1
+  55    c828.e56c.813c    DYNAMIC     Po1
+  55    c828.e56c.8164    DYNAMIC     Po1
+  55    c828.e56c.8170    DYNAMIC     Po1
+  55    c828.e56c.8184    DYNAMIC     Po1
+  55    c828.e56c.81a0    DYNAMIC     Po1
+  55    c828.e56c.81c4    DYNAMIC     Po1
+  55    c828.e56c.81d8    DYNAMIC     Po1
+  55    c828.e56c.81e4    DYNAMIC     Po1
+  55    c828.e56c.81e8    DYNAMIC     Po1
+  55    c828.e56c.81ec    DYNAMIC     Po1
+  55    c828.e56c.8204    DYNAMIC     Po1
+  55    c828.e56c.8220    DYNAMIC     Po1
+  55    c828.e56c.822c    DYNAMIC     Po1
+  55    c828.e56c.8230    DYNAMIC     Po1
+  55    c828.e56c.8234    DYNAMIC     Po1
+  55    c828.e56c.8270    DYNAMIC     Po1
+  55    c828.e56c.8274    DYNAMIC     Po1
+  55    c828.e56c.8290    DYNAMIC     Po1
+  55    c828.e56c.829c    DYNAMIC     Po1
+  55    c828.e56c.82b8    DYNAMIC     Po1
+  55    c828.e56c.82d8    DYNAMIC     Po1
+  55    c828.e56c.82f8    DYNAMIC     Po1
+  55    c828.e56c.8304    DYNAMIC     Po1
+  55    c828.e56c.834c    DYNAMIC     Po1
+  55    c828.e56c.8380    DYNAMIC     Po1
+  55    c828.e56c.8384    DYNAMIC     Po1
+  55    c828.e56c.8388    DYNAMIC     Po1
+  55    c828.e56c.839c    DYNAMIC     Po1
+  55    c828.e56c.83a4    DYNAMIC     Po1
+  55    c828.e56c.83b4    DYNAMIC     Po1
+  55    c828.e56c.83d4    DYNAMIC     Po1
+  55    c828.e56c.83e0    DYNAMIC     Po1
+  55    c828.e56c.83f0    DYNAMIC     Po1
+  55    c828.e56c.83f8    DYNAMIC     Po1
+  55    c828.e56c.841c    DYNAMIC     Po1
+  55    c828.e56c.845c    DYNAMIC     Po1
+  55    c828.e56c.8464    DYNAMIC     Po1
+  55    c828.e56c.8468    DYNAMIC     Po1
+  55    c828.e56c.8470    DYNAMIC     Po1
+  55    c828.e56c.8498    DYNAMIC     Po1
+  55    c828.e56c.84b8    DYNAMIC     Po1
+  55    c828.e56c.84c0    DYNAMIC     Po1
+  55    c828.e56c.84c8    DYNAMIC     Po1
+  55    c828.e56c.84e8    DYNAMIC     Po1
+  55    c828.e56c.8504    DYNAMIC     Po1
+  55    c828.e56c.8538    DYNAMIC     Po1
+  55    c828.e56c.8558    DYNAMIC     Po1
+  55    c828.e56c.8580    DYNAMIC     Po1
+  55    c828.e56c.8590    DYNAMIC     Po1
+  55    c828.e56c.8598    DYNAMIC     Po1
+  55    c828.e56c.85ac    DYNAMIC     Po1
+  55    c828.e56c.85b4    DYNAMIC     Po1
+  55    c828.e56c.85d8    DYNAMIC     Po1
+  55    c828.e56c.85e0    DYNAMIC     Po1
+  55    c828.e56c.85e4    DYNAMIC     Po1
+  55    c828.e56c.85ec    DYNAMIC     Po1
+  55    c828.e56c.8610    DYNAMIC     Po1
+  55    c828.e56c.8614    DYNAMIC     Po1
+  55    c828.e56c.8638    DYNAMIC     Po1
+  55    c828.e56c.865c    DYNAMIC     Po1
+  55    c828.e56c.866c    DYNAMIC     Po1
+  55    c828.e56c.8670    DYNAMIC     Po1
+  55    c828.e56c.8678    DYNAMIC     Po1
+  55    c828.e56c.86d0    DYNAMIC     Po1
+  55    c828.e56c.86e0    DYNAMIC     Po1
+  55    c828.e56c.8714    DYNAMIC     Po1
+  55    c828.e56c.8724    DYNAMIC     Po1
+  55    c828.e56c.8748    DYNAMIC     Po1
+  55    c828.e56c.8750    DYNAMIC     Po1
+  55    c828.e56c.8754    DYNAMIC     Po1
+  55    c828.e56c.876c    DYNAMIC     Po1
+  55    c828.e56c.8780    DYNAMIC     Po1
+  55    c828.e56c.8788    DYNAMIC     Po1
+  55    c828.e56c.87a4    DYNAMIC     Po1
+  55    c828.e56c.87b4    DYNAMIC     Po1
+  55    c828.e56c.87c8    DYNAMIC     Po1
+  55    c828.e56c.87e4    DYNAMIC     Po1
+  55    c828.e56c.87ec    DYNAMIC     Po1
+  55    c828.e56c.87f4    DYNAMIC     Po1
+  55    c828.e56c.8818    DYNAMIC     Po1
+  55    c828.e56c.8830    DYNAMIC     Po1
+  55    c828.e56c.8848    DYNAMIC     Po1
+  55    c828.e56c.8874    DYNAMIC     Po1
+  55    c828.e56c.88b4    DYNAMIC     Po1
+  55    c828.e56c.88f4    DYNAMIC     Po1
+  55    c828.e56c.8900    DYNAMIC     Po1
+  55    c828.e56c.8934    DYNAMIC     Po1
+  55    c828.e56c.8954    DYNAMIC     Po1
+  55    c828.e56c.8984    DYNAMIC     Po1
+  55    c828.e56c.89ec    DYNAMIC     Po1
+  55    c828.e56c.8a10    DYNAMIC     Po1
+  55    c828.e56c.8a34    DYNAMIC     Po1
+  55    c828.e56c.8a88    DYNAMIC     Po1
+  55    c828.e56c.8c94    DYNAMIC     Po1
+  55    c828.e56e.2610    DYNAMIC     Po1
+  55    c828.e56e.3354    DYNAMIC     Po1
+  55    c828.e56e.3cb8    DYNAMIC     Po1
+  55    c828.e56e.45b0    DYNAMIC     Po1
+  55    c828.e56e.7dd4    DYNAMIC     Po1
+  55    c828.e56e.9cfc    DYNAMIC     Po1
+  55    c828.e56e.b680    DYNAMIC     Po1
+  55    c828.e56e.b714    DYNAMIC     Po1
+  55    c828.e56e.b7c8    DYNAMIC     Po1
+  55    c828.e56e.b8a8    DYNAMIC     Te2/0/48
+  55    c828.e56e.b954    DYNAMIC     Po1
+  55    c828.e56e.b998    DYNAMIC     Po1
+  55    c828.e56e.bf50    DYNAMIC     Po1
+  55    c828.e56e.bf74    DYNAMIC     Po1
+  55    c828.e56e.c1b0    DYNAMIC     Po1
+  55    c828.e56e.c1c0    DYNAMIC     Po1
+  55    c828.e56e.c2b4    DYNAMIC     Po1
+  55    c828.e56e.c594    DYNAMIC     Po1
+  55    c828.e56e.c634    DYNAMIC     Po1
+  55    c828.e56e.c658    DYNAMIC     Po1
+  55    c828.e56e.c6c4    DYNAMIC     Po1
+  55    c828.e56e.cac0    DYNAMIC     Po1
+  55    c828.e56e.cb48    DYNAMIC     Te1/0/46
+  55    c828.e56e.cc54    DYNAMIC     Po1
+  55    c828.e56e.cdec    DYNAMIC     Po1
+  55    c828.e56e.ce58    DYNAMIC     Po1
+  55    c828.e56e.cecc    DYNAMIC     Po1
+  55    c828.e56e.cef4    DYNAMIC     Po1
+  55    c828.e56e.cf90    DYNAMIC     Po1
+  55    c828.e56e.cfc0    DYNAMIC     Po1
+  55    c828.e56e.cfd4    DYNAMIC     Po1
+  55    c828.e56e.d0f4    DYNAMIC     Po1
+  55    c828.e56e.d104    DYNAMIC     Po1
+  55    c828.e56e.d134    DYNAMIC     Po1
+  55    c828.e56e.d188    DYNAMIC     Po1
+  55    c828.e56e.d1a4    DYNAMIC     Po1
+  55    c828.e56e.d22c    DYNAMIC     Po1
+  55    c828.e56e.d280    DYNAMIC     Po1
+  55    c828.e56e.d2d4    DYNAMIC     Po1
+  55    c828.e56e.d2e0    DYNAMIC     Po1
+  55    c828.e56e.d360    DYNAMIC     Po1
+  55    c828.e56e.d44c    DYNAMIC     Po1
+  55    c828.e56e.d540    DYNAMIC     Po1
+  55    c828.e56e.d574    DYNAMIC     Po1
+  55    c828.e56e.d5fc    DYNAMIC     Po1
+  55    c828.e56e.d62c    DYNAMIC     Po1
+  55    c828.e56e.d638    DYNAMIC     Po1
+  55    c828.e56e.d648    DYNAMIC     Po1
+  55    c828.e56e.d670    DYNAMIC     Po1
+  55    c828.e56e.d6f8    DYNAMIC     Po1
+  55    c828.e56e.d70c    DYNAMIC     Po1
+  55    c828.e56e.d730    DYNAMIC     Po1
+  55    c828.e56e.d760    DYNAMIC     Po1
+  55    c828.e56e.d764    DYNAMIC     Po1
+  55    c828.e56e.d7a4    DYNAMIC     Po1
+  55    c828.e56e.d7b4    DYNAMIC     Po1
+  55    c828.e56e.d818    DYNAMIC     Po1
+  55    c828.e56e.d824    DYNAMIC     Po1
+  55    c828.e56e.d8a4    DYNAMIC     Po1
+  55    c828.e56e.d8b4    DYNAMIC     Po1
+  55    c828.e56e.d91c    DYNAMIC     Po1
+  55    c828.e56e.d930    DYNAMIC     Po1
+  55    c828.e56e.d93c    DYNAMIC     Po1
+  55    c828.e56e.d944    DYNAMIC     Po1
+  55    c828.e56e.d958    DYNAMIC     Po1
+  55    c828.e56e.d970    DYNAMIC     Po1
+  55    c828.e56e.d984    DYNAMIC     Po1
+  55    c828.e56e.d990    DYNAMIC     Po1
+  55    c828.e56e.d9a8    DYNAMIC     Po1
+  55    c828.e56e.da54    DYNAMIC     Po1
+  55    c828.e56e.da80    DYNAMIC     Po1
+  55    c828.e56e.da8c    DYNAMIC     Po1
+  55    c828.e56e.daac    DYNAMIC     Po1
+  55    c828.e56e.dad4    DYNAMIC     Po1
+  55    c828.e56e.daf0    DYNAMIC     Po1
+  55    c828.e56e.db30    DYNAMIC     Po1
+  55    c828.e56e.db88    DYNAMIC     Po1
+  55    c828.e56e.dbbc    DYNAMIC     Po1
+  55    c828.e56e.dbec    DYNAMIC     Po1
+  55    c828.e56e.dc10    DYNAMIC     Po1
+  55    c828.e56e.dc2c    DYNAMIC     Po1
+  55    c828.e56e.dc44    DYNAMIC     Po1
+  55    c828.e56e.dc48    DYNAMIC     Po1
+  55    c828.e56e.dc50    DYNAMIC     Po1
+  55    c828.e56e.dc64    DYNAMIC     Po1
+  55    c828.e56e.dc6c    DYNAMIC     Po1
+  55    c828.e56e.dd3c    DYNAMIC     Po1
+  55    c828.e56e.dd50    DYNAMIC     Po1
+  55    c828.e56e.dd58    DYNAMIC     Po1
+  55    c828.e56e.ddb8    DYNAMIC     Po1
+  55    c828.e56e.ddd4    DYNAMIC     Po1
+  55    c828.e56e.dde0    DYNAMIC     Po1
+  55    c828.e56e.de10    DYNAMIC     Po1
+  55    c828.e56e.de38    DYNAMIC     Po1
+  55    c828.e56e.de3c    DYNAMIC     Te2/0/47
+  55    c828.e56e.de8c    DYNAMIC     Te1/0/45
+  55    c828.e56e.df8c    DYNAMIC     Po1
+  55    c828.e56e.dfac    DYNAMIC     Po1
+  55    c828.e56e.dfb0    DYNAMIC     Po1
+  55    c828.e56e.dfbc    DYNAMIC     Po1
+  55    c828.e56e.e0a4    DYNAMIC     Po1
+  55    c828.e56e.e0fc    DYNAMIC     Po1
+  55    c828.e56e.e144    DYNAMIC     Po1
+  55    c828.e56e.e19c    DYNAMIC     Po1
+  55    c828.e56e.e238    DYNAMIC     Po1
+  55    c828.e56e.e6c0    DYNAMIC     Po1
+  55    c828.e56e.e9e4    DYNAMIC     Po1
+  55    c828.e56f.3138    DYNAMIC     Po1
+  55    c828.e56f.3c5c    DYNAMIC     Po1
+  55    c828.e56f.3f20    DYNAMIC     Po1
+  55    c828.e56f.85f0    DYNAMIC     Po1
+  55    c828.e56f.87d0    DYNAMIC     Po1
+  55    c828.e56f.886c    DYNAMIC     Po1
+  55    c828.e56f.89f8    DYNAMIC     Po1
+  55    c828.e56f.8c2c    DYNAMIC     Po1
+  55    c828.e56f.945c    DYNAMIC     Po1
+  55    c828.e56f.9558    DYNAMIC     Po1
+  55    c828.e56f.9900    DYNAMIC     Po1
+  55    c828.e56f.9c70    DYNAMIC     Po1
+  55    c828.e56f.a130    DYNAMIC     Po1
+  55    c828.e56f.a160    DYNAMIC     Po1
+  55    c828.e56f.a224    DYNAMIC     Po1
+  55    c828.e56f.a2f8    DYNAMIC     Po1
+  55    c828.e56f.a468    DYNAMIC     Po1
+  55    c828.e56f.a788    DYNAMIC     Po1
+  55    c828.e56f.abfc    DYNAMIC     Po1
+  55    c828.e56f.c8b8    DYNAMIC     Po1
+  55    c828.e56f.ddd0    DYNAMIC     Po1
+  55    c828.e56f.df20    DYNAMIC     Po1
+  55    c828.e56f.e3c4    DYNAMIC     Po1
+  55    c828.e56f.e3c8    DYNAMIC     Po1
+  55    c828.e56f.e4fc    DYNAMIC     Po1
+  55    c828.e56f.e698    DYNAMIC     Te1/0/41
+  55    c828.e56f.eacc    DYNAMIC     Po1
+  55    c828.e56f.ef54    DYNAMIC     Po1
+  55    c828.e56f.f1cc    DYNAMIC     Po1
+  55    c828.e56f.f528    DYNAMIC     Po1
+  55    c828.e56f.f838    DYNAMIC     Po1
+  55    c828.e56f.f9c8    DYNAMIC     Po1
+  55    c828.e56f.fb90    DYNAMIC     Po1
+  55    c828.e56f.fc78    DYNAMIC     Po1
+  55    c828.e56f.fd04    DYNAMIC     Po1
+  55    c828.e56f.fd1c    DYNAMIC     Po1
+  55    c828.e56f.fe08    DYNAMIC     Po1
+Total Mac Addresses for this criterion: 1146
+INFO:root:
+--------------------------------------------------
+Verificado no SW: M131301...
+
+Interface      Vlan Dados    Vlan Voz  Mismatch
+-----------  ------------  ----------  ----------
+Gi1/0/1                 8         113
+Gi1/0/2                 8         113
+Gi1/0/3                 8         113
+Gi1/0/4                 8         113
+Gi1/0/5                 8         113
+Gi1/0/6                 8         113
+Gi1/0/7                 8         113
+Gi1/0/8                 8         113
+Gi1/0/9                 8         113
+Gi1/0/10                8         113
+Gi1/0/11                8         113
+Gi1/0/12                8         113
+Gi1/0/13                8         113
+Gi1/0/14                8         113
+Gi1/0/15                8         113
+Gi1/0/16                8         113
+Gi1/0/17                8         113
+Gi1/0/18                8         113
+Gi1/0/19                8         113
+Gi1/0/20                8         113
+Gi1/0/21                8         113
+Gi1/0/22                8         113
+Gi1/0/23                8         113
+Gi1/0/24                8         113
+Gi1/0/25                8         113
+Gi1/0/26                8         113
+Gi1/0/27                8         113
+Gi1/0/28                8         113
+Gi1/0/29                8         113
+Gi1/0/30                8         113
+Gi1/0/31                8         113
+Gi1/0/32                8         113
+Gi1/0/33                8         113
+Gi1/0/34                8         113
+Gi1/0/35                8         113
+Gi1/0/36                8         113
+Gi1/0/37                8         113
+Gi1/0/38                8         113
+Gi1/0/39                8         113
+Gi1/0/40                8         113
+Te1/0/41               55
+Te1/0/42                8         113
+Te1/0/43               55
+Te1/0/44                8         113
+Te1/0/45               55
+Te1/0/46               55
+Te1/0/47                8         113
+Te1/0/48                8         113
+Te1/1/1
+Te1/1/2
+Te1/1/3
+Te1/1/4
+Twe1/1/1                1
+Twe1/1/2                1
+Fo1/1/1
+Fo1/1/2
+Gi2/0/1                 8         113
+Gi2/0/2                 8         113
+Gi2/0/3                 8         113
+Gi2/0/4                 8         113
+Gi2/0/5                 8         113
+Gi2/0/6                 8         113
+Gi2/0/7                 8         113
+Gi2/0/8                 8         113
+Gi2/0/9                 8         113
+Gi2/0/10                8         113
+Gi2/0/11                8         113
+Gi2/0/12                8         113
+Gi2/0/13                8         113
+Gi2/0/14                8         113
+Gi2/0/15                8         113
+Gi2/0/16                8         113
+Gi2/0/17                8         113
+Gi2/0/18                8         113
+Gi2/0/19                8         113
+Gi2/0/20                8         113
+Gi2/0/21                8         113
+Gi2/0/22                8         113
+Gi2/0/23                8         113
+Gi2/0/24                8         113
+Gi2/0/25                8         113
+Gi2/0/26                8         113
+Gi2/0/27                8         113
+Gi2/0/28                8         113
+Gi2/0/29                8         113
+Gi2/0/30                8         113
+Gi2/0/31                8         113
+Gi2/0/32                8         113
+Gi2/0/33                8         113
+Gi2/0/34                8         113
+Gi2/0/35                8         113
+Gi2/0/36                8         113
+Gi2/0/37                8         113
+Gi2/0/38                8         113
+Gi2/0/39                8         113
+Gi2/0/40                8         113
+Te2/0/41                8         113
+Te2/0/42                8         113
+Te2/0/43                8         113
+Te2/0/44                8         113
+Te2/0/45                8         113
+Te2/0/46               55
+Te2/0/47               55
+Te2/0/48               55
+Te2/1/1
+Te2/1/2
+Te2/1/3
+Te2/1/4
+Twe2/1/1               99
+Twe2/1/2                1
+Fo2/1/1
+Fo2/1/2
+Po1                     1
+
+
+
+INFO:root:Verificando MACs iniciando com 849a na vlan 52...
+INFO:root:Nenhum Mac iniciado em 849a da vlan 52 foi encontrado neste switch!
+INFO:root:
+
+ 0 macs encontrados no SW: M131301...
+
+
+INFO:root:Verificando MACs iniciando com c828 na vlan 55...
+INFO:root:
+
+ 6 macs encontrados no SW: M131301...
+
+mac-address       vlan  porta     status
+--------------  ------  --------  --------
+c828.e51d.be2c      55  Te1/0/43  OK
+c828.e56e.b8a8      55  Te2/0/48  OK
+c828.e56e.cb48      55  Te1/0/46  OK
+c828.e56e.de3c      55  Te2/0/47  OK
+c828.e56e.de8c      55  Te1/0/45  OK
+c828.e56f.e698      55  Te1/0/41  OK
+INFO:root:Verificando MACs iniciando com 0050 na vlan 85...
+INFO:root:Nenhum Mac iniciado em 0050 da vlan 85 foi encontrado neste switch!
+INFO:root:
+
+ 0 macs encontrados no SW: M131301...
+
+
+INFO:root:Verificando MACs iniciando com 001a na vlan 113...
+INFO:root:
+
+ 42 macs encontrados no SW: M131301...
+
+mac-address       vlan  porta     status
+--------------  ------  --------  --------
+001a.e80e.6225       8  Gi2/0/20  NOK
+001a.e84c.24d2       8  Gi2/0/29  NOK
+001a.e84c.2cc2       8  Gi2/0/25  NOK
+001a.e84c.2dd8       8  Gi1/0/27  NOK
+001a.e84c.4b40       8  Gi2/0/24  NOK
+001a.e891.de78       8  Gi2/0/18  NOK
+001a.e80e.6225     113  Gi2/0/20  OK
+001a.e84b.f40c     113  Gi1/0/20  OK
+001a.e84c.05df     113  Gi2/0/35  OK
+001a.e84c.20eb     113  Gi2/0/8   OK
+001a.e84c.2107     113  Gi2/0/10  OK
+001a.e84c.213f     113  Gi2/0/36  OK
+001a.e84c.2306     113  Gi1/0/39  OK
+001a.e84c.230f     113  Gi2/0/5   OK
+001a.e84c.2377     113  Gi1/0/4   OK
+001a.e84c.23b0     113  Gi2/0/16  OK
+001a.e84c.2413     113  Gi1/0/33  OK
+001a.e84c.243c     113  Gi2/0/38  OK
+001a.e84c.24d2     113  Gi2/0/29  OK
+001a.e84c.2536     113  Gi1/0/8   OK
+001a.e84c.26eb     113  Gi2/0/7   OK
+001a.e84c.26f6     113  Gi2/0/1   OK
+001a.e84c.2789     113  Te1/0/47  OK
+001a.e84c.2c25     113  Gi1/0/13  OK
+001a.e84c.2c44     113  Te2/0/45  OK
+001a.e84c.2c8d     113  Te2/0/41  OK
+001a.e84c.2c90     113  Gi1/0/25  OK
+001a.e84c.2ca8     113  Gi1/0/7   OK
+001a.e84c.2cc2     113  Gi2/0/25  OK
+001a.e84c.2cfa     113  Te2/0/42  OK
+001a.e84c.2cfe     113  Gi2/0/30  OK
+001a.e84c.2cff     113  Gi1/0/12  OK
+001a.e84c.2d07     113  Gi2/0/31  OK
+001a.e84c.2d28     113  Gi1/0/36  OK
+001a.e84c.2d68     113  Gi1/0/40  OK
+001a.e84c.2d77     113  Gi2/0/6   OK
+001a.e84c.2dd8     113  Gi1/0/27  OK
+001a.e84c.32c1     113  Gi1/0/10  OK
+001a.e84c.3bda     113  Gi1/0/11  OK
+001a.e84c.3cc0     113  Gi1/0/21  OK
+001a.e84c.4b40     113  Gi2/0/24  OK
+001a.e891.de78     113  Gi2/0/18  OK
+INFO:root:
+-----------------------------------
+Verificação Concluida!
