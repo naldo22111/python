@@ -1,0 +1,13 @@
+default interface {{interface}}
+interface {{interface}}
+ description Link to {{host}} port {{connection}}
+ switchport
+ {% if vlan == 'trunk'-%}
+ switchport mode trunk
+ {% else -%}
+ switchport mode access
+ switchport access vlan {{vlan}}
+ spanning-tree port type edge
+ {% endif -%}
+ no shutdown
+!

@@ -1,0 +1,11 @@
+Switch,Interface,Host,Connection,Vlan
+sw-n9k-01,ethernet1/1,esxi-02,nic3,44
+sw-n9k-01,ethernet1/2,srv-03,eth1,44
+sw-n9k-01,ethernet1/3,lnx-02,nic1,35
+sw-n9k-01,ethernet1/4,srv-01,eth1,44
+sw-n9k-01,ethernet1/5,lnx-01,nic1,trunk
+sw-n9k-01,ethernet1/6,lnx-03,nic1,23
+sw-n9k-01,ethernet1/7,lnx-02,nic3,trunk
+sw-n9k-01,ethernet1/8,lnx-02,nic0,44
+sw-n9k-01,ethernet1/9,lnx-01,nic1,44
+sw-n9k-01,ethernet1/10,lnx-03,nic3,23

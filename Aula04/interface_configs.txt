@@ -1,0 +1,86 @@
+default interface ethernet1/1
+interface ethernet1/1
+ description Link to esxi-02 port nic3
+ switchport
+ switchport mode access
+ switchport access vlan 44
+ spanning-tree port type edge
+ no shutdown
+!
+default interface ethernet1/2
+interface ethernet1/2
+ description Link to srv-03 port eth1
+ switchport
+ switchport mode access
+ switchport access vlan 44
+ spanning-tree port type edge
+ no shutdown
+!
+default interface ethernet1/3
+interface ethernet1/3
+ description Link to lnx-02 port nic1
+ switchport
+ switchport mode access
+ switchport access vlan 35
+ spanning-tree port type edge
+ no shutdown
+!
+default interface ethernet1/4
+interface ethernet1/4
+ description Link to srv-01 port eth1
+ switchport
+ switchport mode access
+ switchport access vlan 44
+ spanning-tree port type edge
+ no shutdown
+!
+default interface ethernet1/5
+interface ethernet1/5
+ description Link to lnx-01 port nic1
+ switchport
+ switchport mode trunk
+ no shutdown
+!
+default interface ethernet1/6
+interface ethernet1/6
+ description Link to lnx-03 port nic1
+ switchport
+ switchport mode access
+ switchport access vlan 23
+ spanning-tree port type edge
+ no shutdown
+!
+default interface ethernet1/7
+interface ethernet1/7
+ description Link to lnx-02 port nic3
+ switchport
+ switchport mode trunk
+ no shutdown
+!
+default interface ethernet1/8
+interface ethernet1/8
+ description Link to lnx-02 port nic0
+ switchport
+ switchport mode access
+ switchport access vlan 44
+ spanning-tree port type edge
+ no shutdown
+!
+default interface ethernet1/9
+interface ethernet1/9
+ description Link to lnx-01 port nic1
+ switchport
+ switchport mode access
+ switchport access vlan 44
+ spanning-tree port type edge
+ no shutdown
+!
+default interface ethernet1/10
+interface ethernet1/10
+ description Link to lnx-03 port nic3
+ switchport
+ switchport mode access
+ switchport access vlan 23
+ spanning-tree port type edge
+ no shutdown
+!
