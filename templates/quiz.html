@@ -21,10 +21,10 @@
             <div class="option">
                 {% if question.multiple_answers %}
                 <input type="checkbox" name="answer" value="{{ letra }}" id="option{{ letra }}">
-                <label for="option{{ letra }}">{{ letra }}">{{ texto }}</label>
+                <label for="option{{ letra }}">{{ letra }}) {{ texto }}</label>
                 {% else %}
                 <input type="radio" name="answer" value="{{ letra }}" id="option{{ letra }}" required>
-                <label for="option{{ letra }}">{{ letra }}">{{ texto }}</label>
+                <label for="option{{ letra }}">{{ letra }}) {{ texto }}</label>
                 {% endif %}
             </div>
             {% endfor %}

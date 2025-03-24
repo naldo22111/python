@@ -12,13 +12,16 @@
         <div class="upload-section">
             <h2>Escolha o arquivo de questões:</h2>
             <form method="POST" enctype="multipart/form-data">
-                <div class="file-input-wrapper">
-                    <input type="file" name="question_file" accept=".json" required>
+                <div class="form-group mb-3">
+                    <label for="question_file">Selecione o arquivo JSON com as questões:</label>
+                    <input type="file" class="form-control" id="question_file" name="question_file" accept=".json" required>
                 </div>
-                <div class="button-group">
-                    <button type="submit" class="button">Carregar e Iniciar</button>
-                    <a href="{{ url_for('finish') }}" class="button button-danger">Sair</a>
+                <div class="form-group mb-3">
+                    <label for="exam_description">Descrição do Exame:</label>
+                    <input type="text" class="form-control" id="exam_description" name="exam_description" 
+                           placeholder="Ex: Exame de Certificação Python" maxlength="100">
                 </div>
+                <button type="submit" class="btn btn-primary">Iniciar Exame</button>
             </form>
             <p class="file-hint">Selecione um arquivo JSON com as questões do exame</p>
         </div>
