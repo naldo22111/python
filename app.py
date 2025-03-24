@@ -19,6 +19,11 @@ import pickle
 app = Flask(__name__)
 app.secret_key = 'sua_chave_secreta_aqui'
 
+# Adicionar filtro personalizado para converter números em letras
+@app.template_filter('chr_offset')
+def chr_offset(number):
+    return chr(ord('A') + number - 1)
+
 def load_questions():
     try:
         current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -98,10 +103,13 @@ def index():
         
         try:
             file_content = file.read().decode('utf-8')
-            questions, exam_description = load_questions_from_file(file_content)
+            questions, default_description = load_questions_from_file(file_content)
             
             if not questions:
                 return "Erro ao processar arquivo. Verifique o formato.", 400
+            
+            # Usar a descrição fornecida pelo usuário ou a padrão do arquivo
+            exam_description = request.form.get('exam_description') or default_description
             
             # Salvar questões em arquivo temporário
             temp_id = save_questions_temp(questions)
