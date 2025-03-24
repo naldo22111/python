@@ -879,6 +879,590 @@
             "exam_topic": "AWS Certified Cloud Practitioner",
             "correct_answer": "B",
             "id": 60
+        },
+        {
+            "question": "Which of the following is a fully managed MySQL-compatible database?",
+            "options": {
+                "A": "Amazon S3",
+                "B": "Amazon DynamoDB",
+                "C": "Amazon Redshift",
+                "D": "Amazon Aurora"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "D",
+            "id": 61
+        },
+        {
+            "question": "Which AWS service supports a hybrid architecture that gives users the ability to extend AWS infrastructure, AWS services, APIs, and tools to data centers, co-location environments, or on-premises facilities?",
+            "options": {
+                "A": "AWS Snowmobile",
+                "B": "AWS Local Zones",
+                "C": "AWS Outposts",
+                "D": "AWS Fargate"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "C",
+            "id": 62
+        },
+        {
+            "question": "Which AWS service can run a managed PostgreSQL database that provides online transaction processing (OLTP)?",
+            "options": {
+                "A": "Amazon DynamoDB",
+                "B": "Amazon Athena",
+                "C": "Amazon RDS",
+                "D": "Amazon EMR"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "C",
+            "id": 63
+        },
+        {
+            "question": "A company wants to provide managed Windows virtual desktops and applications to its remote employees over secure network connections.\nWhich AWS services can the company use to meet these requirements? (Choose two.)",
+            "options": {
+                "A": "Amazon Connect",
+                "B": "Amazon AppStream 2.0",
+                "C": "Amazon WorkSpaces",
+                "D": "AWS Site-to-Site VPN",
+                "E": "Amazon Elastic Container Service (Amazon ECS)"
+            },
+            "type": "text",
+            "multiple_answers": true,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answers": [
+                "B",
+                "C"
+            ],
+            "id": 64
+        },
+        {
+            "question": "A company wants to monitor for misconfigured security groups that are allowing unrestricted access to specific ports.\nWhich AWS service will meet this requirement?",
+            "options": {
+                "A": "AWS Trusted Advisor",
+                "B": "Amazon CloudWatch",
+                "C": "Amazon GuardDuty",
+                "D": "AWS Health Dashboard"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "A",
+            "id": 65
+        },
+        {
+            "question": "Which AWS service is a key-value database that provides sub-millisecond latency on a large scale?",
+            "options": {
+                "A": "Amazon DynamoDB",
+                "B": "Amazon Aurora",
+                "C": "Amazon DocumentDB (with MongoDB compatibility)",
+                "D": "Amazon Neptune"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "A",
+            "id": 66
+        },
+        {
+            "question": "A company is deploying a machine learning (ML) research project that will require a lot of compute power over several months. The ML processing jobs do not need to run at specific times.\nWhich Amazon EC2 instance purchasing option will meet these requirements at the lowest cost?",
+            "options": {
+                "A": "On-Demand Instances",
+                "B": "Spot Instances",
+                "C": "Reserved Instances",
+                "D": "Dedicated Instances"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "B",
+            "id": 67
+        },
+        {
+            "question": "Which AWS services or features provide disaster recovery solutions for Amazon EC2 instances? (Choose two.)",
+            "options": {
+                "A": "EC2 Reserved Instances",
+                "B": "EC2 Amazon Machine Images (AMIs)",
+                "C": "Amazon Elastic Block Store (Amazon EBS) snapshots",
+                "D": "AWS Shield",
+                "E": "Amazon GuardDuty"
+            },
+            "type": "text",
+            "multiple_answers": true,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answers": [
+                "B",
+                "C"
+            ],
+            "id": 68
+        },
+        {
+            "question": "Which AWS service provides command line access to AWS tools and resources directly from a web browser?",
+            "options": {
+                "A": "AWS CloudHSM",
+                "B": "AWS CloudShell",
+                "C": "Amazon WorkSpaces",
+                "D": "AWS Cloud Map"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "B",
+            "id": 69
+        },
+        {
+            "question": "A network engineer needs to build a hybrid cloud architecture connecting on-premises networks to the AWS Cloud using AWS Direct Connect. The company has a few VPCs in a single AWS Region and expects to increase the number of VPCs to hundreds over time.\nWhich AWS service or feature should the engineer use to simplify and scale this connectivity as the VPCs increase in number?",
+            "options": {
+                "A": "VPC endpoints",
+                "B": "AWS Transit Gateway",
+                "C": "Amazon Route 53",
+                "D": "AWS Secrets Manager"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "B",
+            "id": 70
+        },
+        {
+            "question": "A company wants to assess its operational readiness. It also wants to identify and mitigate any operational risks ahead of a new product launch.\nWhich AWS Support plan offers guidance and support for this kind of event at no additional charge?",
+            "options": {
+                "A": "AWS Business Support",
+                "B": "AWS Basic Support",
+                "C": "AWS Developer Support",
+                "D": "AWS Enterprise Support"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "D",
+            "id": 71
+        },
+        {
+            "question": "A company wants to establish a schedule for rotating database user credentials.\nWhich AWS service will support this requirement with the LEAST amount of operational overhead?",
+            "options": {
+                "A": "AWS Systems Manager",
+                "B": "AWS Secrets Manager",
+                "C": "AWS License Manager",
+                "D": "AWS Managed Services"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "B",
+            "id": 72
+        },
+        {
+            "question": "Which AWS service or feature can be used to create a private connection between an on-premises workload and an AWS Cloud workload?",
+            "options": {
+                "A": "Amazon Route 53",
+                "B": "Amazon Macie",
+                "C": "AWS Direct Connect",
+                "D": "AWS PrivateLink"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "C",
+            "id": 73
+        },
+        {
+            "question": "Which AWS service is used to provide encryption for Amazon EBS?",
+            "options": {
+                "A": "AWS Certificate Manager",
+                "B": "AWS Systems Manager",
+                "C": "AWS KMS",
+                "D": "AWS Config"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "C",
+            "id": 74
+        },
+        {
+            "question": "A company wants to manage its AWS Cloud resources through a web interface.\nWhich AWS service will meet this requirement?",
+            "options": {
+                "A": "AWS Management Console",
+                "B": "AWS CLI",
+                "C": "AWS SDK",
+                "D": "AWS Cloud9"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "A",
+            "id": 75
+        },
+        {
+            "question": "Which of the following are advantages of the AWS Cloud? (Choose two.)",
+            "options": {
+                "A": "Trade variable expenses for capital expenses",
+                "B": "High economies of scale",
+                "C": "Launch globally in minutes",
+                "D": "Focus on managing hardware infrastructure",
+                "E": "Overprovision to ensure capacity"
+            },
+            "type": "text",
+            "multiple_answers": true,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answers": [
+                "B",
+                "C"
+            ],
+            "id": 76
+        },
+        {
+            "question": "Which AWS Cloud benefit is shown by an architecture’s ability to withstand failures with minimal downtime?",
+            "options": {
+                "A": "Agility",
+                "B": "Elasticity",
+                "C": "Scalability",
+                "D": "High availability"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "D",
+            "id": 77
+        },
+        {
+            "question": "A developer needs to maintain a development environment infrastructure and a production environment infrastructure in a repeatable fashion.\nWhich AWS service should the developer use to meet these requirements?",
+            "options": {
+                "A": "AWS Ground Station",
+                "B": "AWS Shield",
+                "C": "AWS IoT Device Defender",
+                "D": "AWS CloudFormation"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "D",
+            "id": 78
+        },
+        {
+            "question": "Which task is the customer’s responsibility, according to the AWS shared responsibility model?",
+            "options": {
+                "A": "Maintain the security of the AWS Cloud.",
+                "B": "Configure firewalls and networks.",
+                "C": "Patch the operating system of Amazon RDS instances.",
+                "D": "Implement physical and environmental controls."
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "B",
+            "id": 79
+        },
+        {
+            "question": "Which AWS service helps deliver highly available applications with fast failover for multi-Region and Multi-AZ architectures?",
+            "options": {
+                "A": "AWS WAF",
+                "B": "AWS Global Accelerator",
+                "C": "AWS Shield",
+                "D": "AWS Direct Connect"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "B",
+            "id": 80
+        },
+        {
+            "question": "A company has a set of ecommerce applications. The applications need to be able to send messages to each other.\nWhich AWS service meets this requirement?",
+            "options": {
+                "A": "AWS Auto Scaling",
+                "B": "Elastic Load Balancing",
+                "C": "Amazon Simple Queue Service (Amazon SQS)",
+                "D": "Amazon Kinesis Data Streams"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "C",
+            "id": 81
+        },
+        {
+            "question": "What are the benefits of consolidated billing for AWS Cloud services? (Choose two.)",
+            "options": {
+                "A": "Volume discounts",
+                "B": "A minimal additional fee for use",
+                "C": "One bill for multiple accounts",
+                "D": "Installment payment options",
+                "E": "Custom cost and usage budget creation"
+            },
+            "type": "text",
+            "multiple_answers": true,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answers": [
+                "A",
+                "C"
+            ],
+            "id": 82
+        },
+        {
+            "question": "A user wants to review all Amazon S3 buckets with ACLs and S3 bucket policies in the S3 console.\nWhich AWS service or resource will meet this requirement?",
+            "options": {
+                "A": "S3 Multi-Region Access Points",
+                "B": "S3 Storage Lens",
+                "C": "AWS IAM Identity Center (AWS Single Sign-On)",
+                "D": "Access Analyzer for S3"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "D",
+            "id": 83
+        },
+        {
+            "question": "What is the best resource for a user to find compliance-related information and reports about AWS?",
+            "options": {
+                "A": "AWS Artifact",
+                "B": "AWS Marketplace",
+                "C": "Amazon Inspector",
+                "D": "AWS Support"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "A",
+            "id": 84
+        },
+        {
+            "question": "Which AWS service enables companies to deploy an application close to end users?",
+            "options": {
+                "A": "Amazon CloudFront",
+                "B": "AWS Auto Scaling",
+                "C": "AWS AppSync",
+                "D": "Amazon Route 53"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "A",
+            "id": 85
+        },
+        {
+            "question": "Which AWS service or feature improves network performance by sending traffic through the AWS worldwide network infrastructure?",
+            "options": {
+                "A": "Route table",
+                "B": "AWS Transit Gateway",
+                "C": "AWS Global Accelerator",
+                "D": "Amazon VPC"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "C",
+            "id": 86
+        },
+        {
+            "question": "Which AWS service provides highly durable object storage?",
+            "options": {
+                "A": "Amazon S3",
+                "B": "Amazon Elastic File System (Amazon EFS)",
+                "C": "Amazon Elastic Block Store (Amazon EBS)",
+                "D": "Amazon FSx"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "A",
+            "id": 87
+        },
+        {
+            "question": "Which responsibility belongs to AWS when a company hosts its databases on Amazon EC2 instances?",
+            "options": {
+                "A": "Database backups",
+                "B": "Database software patches",
+                "C": "Operating system patches",
+                "D": "Operating system installations"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "D",
+            "id": 88
+        },
+        {
+            "question": "Which of the following are advantages of moving to the AWS Cloud? (Choose two.)",
+            "options": {
+                "A": "The ability to turn over the responsibility for all security to AWS.",
+                "B": "The ability to use the pay-as-you-go model.",
+                "C": "The ability to have full control over the physical infrastructure.",
+                "D": "No longer having to guess what capacity will be required.",
+                "E": "No longer worrying about users access controls."
+            },
+            "type": "text",
+            "multiple_answers": true,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answers": [
+                "B",
+                "D"
+            ],
+            "id": 89
+        },
+        {
+            "question": "Which AWS service is a hybrid cloud storage service that provides on-premises users access to virtually unlimited cloud storage?",
+            "options": {
+                "A": "AWS DataSync",
+                "B": "Amazon S3 Glacier",
+                "C": "AWS Storage Gateway",
+                "D": "Amazon Elastic Block Store (Amazon EBS)"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "C",
+            "id": 90
+        },
+        {
+            "question": "A company plans to migrate to AWS and wants to create cost estimates for its AWS use cases.\nWhich AWS service or tool can the company use to meet these requirements?",
+            "options": {
+                "A": "AWS Pricing Calculator",
+                "B": "Amazon CloudWatch",
+                "C": "AWS Cost Explorer",
+                "D": "AWS Budgets"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "A",
+            "id": 91
+        },
+        {
+            "question": "Which tool should a developer use to integrate AWS service features directly into an application?",
+            "options": {
+                "A": "AWS Software Development Kit",
+                "B": "AWS CodeDeploy",
+                "C": "AWS Lambda",
+                "D": "AWS Batch"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "A",
+            "id": 92
+        },
+        {
+            "question": "Which of the following is a recommended design principle of the AWS Well-Architected Framework?",
+            "options": {
+                "A": "Reduce downtime by making infrastructure changes infrequently and in large increments.",
+                "B": "Invest the time to configure infrastructure manually.",
+                "C": "Learn to improve from operational failures.",
+                "D": "Use monolithic application design for centralization."
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "C",
+            "id": 93
+        },
+        {
+            "question": "Using AWS Identity and Access Management (IAM) to grant access only to the resources needed to perform a task is a concept known as:",
+            "options": {
+                "A": "restricted access.",
+                "B": "as-needed access.",
+                "C": "least privilege access.",
+                "D": "token access."
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "C",
+            "id": 94
+        },
+        {
+            "question": "Which AWS service or tool can be used to set up a firewall to control traffic going into and coming out of an Amazon VPC subnet?",
+            "options": {
+                "A": "Security group",
+                "B": "AWS WAF",
+                "C": "AWS Firewall Manager",
+                "D": "Network ACL"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "D",
+            "id": 95
+        },
+        {
+            "question": "A company wants to operate a data warehouse to analyze data without managing the data warehouse infrastructure.\nWhich AWS service will meet this requirement?",
+            "options": {
+                "A": "Amazon Aurora",
+                "B": "Amazon Redshift Serverless",
+                "C": "AWS Lambda",
+                "D": "Amazon RDS"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "B",
+            "id": 96
+        },
+        {
+            "question": "How does AWS Cloud computing help businesses reduce costs? (Choose two.)",
+            "options": {
+                "A": "AWS charges the same prices for services in every AWS Region.",
+                "B": "AWS enables capacity to be adjusted on demand.",
+                "C": "AWS offers discounts for Amazon EC2 instances that remain idle for more than 1 week.",
+                "D": "AWS does not charge for data sent from the AWS Cloud to the internet.",
+                "E": "AWS eliminates many of the costs of building and maintaining on-premises data centers."
+            },
+            "type": "text",
+            "multiple_answers": true,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answers": [
+                "B",
+                "E"
+            ],
+            "id": 97
+        },
+        {
+            "question": "A company wants to grant users in one AWS account access to resources in another AWS account. The users do not currently have permission to access the resources.\nWhich AWS service will meet this requirement?",
+            "options": {
+                "A": "IAM group",
+                "B": "IAM role",
+                "C": "IAM tag",
+                "D": "IAM Access Analyzer"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "B",
+            "id": 98
+        },
+        {
+            "question": "Which task is the responsibility of AWS when using AWS services?",
+            "options": {
+                "A": "Management of IAM user permissions",
+                "B": "Creation of security group rules for outbound access",
+                "C": "Maintenance of physical and environmental controls",
+                "D": "Application of Amazon EC2 operating system patches"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "C",
+            "id": 99
+        },
+        {
+            "question": "A company wants to automate infrastructure deployment by using infrastructure as code (IaC). The company wants to scale production stacks so the stacks can be deployed in multiple AWS Regions.\nWhich AWS service will meet these requirements?",
+            "options": {
+                "A": "Amazon CloudWatch",
+                "B": "AWS Config",
+                "C": "AWS Trusted Advisor",
+                "D": "AWS CloudFormation"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "D",
+            "id": 100
         }
     ]
 }
