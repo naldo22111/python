@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exame App - Questão</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Questão {{ question_number }} de {{ total_questions }}</h2>
+        
+        <div class="question">
+            <p>{{ question.question }}</p>
+            {% if question.type == 'image' %}
+            <img src="{{ url_for('static', filename=question.image_path.replace('static/', '')) }}" alt="Question Image">
+            {% endif %}
+        </div>
+
+        <form method="POST" action="{{ url_for('submit') }}">
+            {% for letra, texto in question.options.items() %}
+            <div class="option">
+                {% if question.multiple_answers %}
+                <input type="checkbox" name="answer" value="{{ letra }}" id="option{{ letra }}">
+                <label for="option{{ letra }}">{{ letra }}) {{ texto }}</label>
+                {% else %}
+                <input type="radio" name="answer" value="{{ letra }}" id="option{{ letra }}" required>
+                <label for="option{{ letra }}">{{ letra }}) {{ texto }}</label>
+                {% endif %}
+            </div>
+            {% endfor %}
+            {% if question.multiple_answers %}
+            <p class="hint">Selecione todas as respostas corretas</p>
+            {% endif %}
+            <div class="button-group">
+                <button type="submit" class="button">Próxima</button>
+                <a href="{{ url_for('finish') }}" class="button button-danger">Finalizar Exame</a>
+            </div>
+        </form>
+    </div>
+    <footer class="footer">
+        <p>&copy; {{ year }} - Naldo Pinheiro - <a href="mailto:naldo.pinheiro@nap.tec.br">naldo.pinheiro@nap.tec.br</a></p>
+    </footer>
+</body>
+</html>

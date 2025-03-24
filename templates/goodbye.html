@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exame App - Até Logo!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Obrigado por participar!</h1>
+        <p>Você pode fechar esta janela agora.</p>
+        <div class="button-group">
+            <a href="{{ url_for('index') }}" class="button">Voltar ao Início</a>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; {{ year }} - Naldo Pinheiro - <a href="mailto:naldo.pinheiro@nap.tec.br">naldo.pinheiro@nap.tec.br</a></p>
+    </footer>
+</body>
+</html>

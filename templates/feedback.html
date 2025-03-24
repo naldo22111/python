@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exame App - Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>{{ "Resposta Correta!" if is_correct else "Resposta Incorreta" }}</h2>
+        
+        <div class="question">
+            <p>{{ question.question }}</p>
+            {% if question.type == 'image' %}
+            <img src="{{ url_for('static', filename=question.image_path.replace('static/', '')) }}" alt="Question Image">
+            {% endif %}
+        </div>
+
+        <div class="feedback-options">
+            {% for letra, texto in question.options.items() %}
+            <div class="option {{ 'correct' if (question.multiple_answers and letra in question.correct_answers) or 
+                                              (not question.multiple_answers and letra == question.correct_answer) }}">
+                <label>{{ letra }}) {{ texto }}</label>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="button-group">
+            {% if has_next %}
+            <form action="{{ url_for('next_question') }}" method="post" style="display: inline;">
+                <button type="submit" class="button">Próxima Questão</button>
+            </form>
+            {% else %}
+            <a href="{{ url_for('result') }}" class="button">Ver Resultado</a>
+            {% endif %}
+            <a href="{{ url_for('finish') }}" class="button button-danger">Finalizar Exame</a>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; {{ year }} - Naldo Pinheiro - <a href="mailto:naldo.pinheiro@nap.tec.br">naldo.pinheiro@nap.tec.br</a></p>
+    </footer>
+</body>
+</html>

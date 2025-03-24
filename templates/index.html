@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exame App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao Exame!</h1>
+        <p>Teste seus conhecimentos respondendo às questões.</p>
+        <div class="button-group">
+            <a href="{{ url_for('quiz') }}" class="button">Começar Exame</a>
+            <a href="{{ url_for('finish') }}" class="button button-danger">Sair</a>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; {{ year }} - Naldo Pinheiro - <a href="mailto:naldo.pinheiro@nap.tec.br">naldo.pinheiro@nap.tec.br</a></p>
+    </footer>
+</body>
+</html>

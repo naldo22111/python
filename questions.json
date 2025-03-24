@@ -1,0 +1,46 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "Qual é a capital do Brasil?",
+            "options": {
+                "A": "São Paulo",
+                "B": "Rio de Janeiro",
+                "C": "Brasília",
+                "D": "Salvador"
+            },
+            "correct_answer": "C",
+            "type": "text",
+            "multiple_answers": false
+        },
+        {
+            "id": 2,
+            "question": "Que animal está na imagem?",
+            "image_path": "static/images/example_cat.jpg",
+            "options": {
+                "A": "Cachorro",
+                "B": "Gato",
+                "C": "Coelho",
+                "D": "Hamster"
+            },
+            "correct_answer": "B",
+            "type": "image",
+            "multiple_answers": false
+        },
+        {
+            "id": 3,
+            "question": "Quais são linguagens de programação?",
+            "options": {
+                "A": "Python",
+                "B": "Word",
+                "C": "Java",
+                "D": "Excel",
+                "E": "JavaScript",
+                "F": "PowerPoint"
+            },
+            "correct_answers": ["A", "C", "E"],
+            "type": "text",
+            "multiple_answers": true
+        }
+    ]
+}

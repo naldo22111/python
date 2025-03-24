@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.question img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+.option {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.option input[type="radio"],
+.option input[type="checkbox"] {
+    margin: 0 10px 0 0;
+}
+
+.option label {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.option label::first-letter {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-group form {
+    margin: 0;
+}
+
+.button-group button.button {
+    margin: 0;
+    height: 100%;
+}
+
+.button-danger {
+    background-color: #dc3545;
+}
+
+.button-danger:hover {
+    background-color: #c82333;
+}
+
+.hint {
+    color: #666;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.feedback-options .option {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.feedback-options .option.correct {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.option input[type="checkbox"],
+.option input[type="radio"] {
+    margin-right: 10px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

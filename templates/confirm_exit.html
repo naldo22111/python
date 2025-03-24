@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exame App - Confirmar Saída</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Deseja realmente sair?</h1>
+        <p>Esta ação irá encerrar o aplicativo.</p>
+        <div class="button-group">
+            <a href="{{ url_for('index') }}" class="button">Voltar ao Exame</a>
+            <form action="{{ url_for('shutdown') }}" method="post" style="display: inline;">
+                <button type="submit" class="button button-danger">Confirmar e Sair</button>
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; {{ year }} - Naldo Pinheiro - <a href="mailto:naldo.pinheiro@nap.tec.br">naldo.pinheiro@nap.tec.br</a></p>
+    </footer>
+</body>
+</html>

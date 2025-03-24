@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exame App - Resultado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Resultado do Exame</h1>
+        <p>Você acertou {{ score }} de {{ total }} questões!</p>
+        <p>Pontuação: {{ (score / total * 100)|round(2) }}%</p>
+        <div class="button-group">
+            <a href="{{ url_for('index') }}" class="button">Tentar Novamente</a>
+            <a href="{{ url_for('finish') }}" class="button button-danger">Encerrar Aplicativo</a>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; {{ year }} - Naldo Pinheiro - <a href="mailto:naldo.pinheiro@nap.tec.br">naldo.pinheiro@nap.tec.br</a></p>
+    </footer>
+</body>
+</html>
