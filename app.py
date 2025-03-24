@@ -10,16 +10,27 @@ app.secret_key = 'sua_chave_secreta_aqui'
 
 def load_questions():
     try:
-        # Usar caminho absoluto para o arquivo JSON
         current_dir = os.path.dirname(os.path.abspath(__file__))
         json_path = os.path.join(current_dir, 'questions.json')
         print(f"Tentando carregar arquivo: {json_path}")
         
         with open(json_path, 'r', encoding='utf-8') as file:
-            return json.load(file)['questions']
+            all_questions = json.load(file)['questions']
+            print(f"Carregadas {len(all_questions)} questões com sucesso")
+            
+            # Embaralhar todas as questões
+            random.shuffle(all_questions)
+            
+            # Armazenar apenas os IDs das questões na sessão
+            return [(q['id'], q['exam_topic']) for q in all_questions], all_questions
     except Exception as e:
         print(f"Erro ao carregar questions.json: {str(e)}")
+        import traceback
+        traceback.print_exc()
         return []
+
+def get_question_by_id(questions, question_id):
+    return next((q for q in questions if q['id'] == question_id), None)
 
 def shutdown_server():
     func = request.environ.get('werkzeug.server.shutdown')
@@ -30,77 +41,97 @@ def shutdown_server():
 @app.route('/')
 def index():
     session.clear()
-    questions = load_questions()
-    session['questions'] = questions
-    session['current_question'] = 0
-    session['score'] = 0
-    return render_template('index.html', year=datetime.now().year)
+    try:
+        question_ids, all_questions = load_questions()
+        if not question_ids:
+            return "Erro ao carregar questões. Verifique o arquivo questions.json", 500
+        
+        # Armazenar apenas IDs e informações essenciais na sessão
+        session['question_ids'] = question_ids
+        session['current_index'] = 0
+        session['score'] = 0
+        session['total_questions'] = len(question_ids)
+        
+        return render_template('index.html', year=datetime.now().year)
+    except Exception as e:
+        print(f"Erro ao inicializar o exame: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return "Erro ao inicializar o exame", 500
 
 @app.route('/quiz')
 def quiz():
-    if 'questions' not in session:
+    if 'question_ids' not in session:
         return redirect(url_for('index'))
     
-    questions = session['questions']
-    current = session['current_question']
+    current_index = session.get('current_index', 0)
+    question_ids = session.get('question_ids', [])
     
-    if current >= len(questions):
+    if current_index >= len(question_ids):
         return redirect(url_for('result'))
     
-    return render_template('quiz.html', 
-                         question=questions[current],
-                         question_number=current + 1,
-                         total_questions=len(questions),
+    # Carregar a questão atual do arquivo
+    with open(os.path.join(os.path.dirname(__file__), 'questions.json'), 'r', encoding='utf-8') as file:
+        all_questions = json.load(file)['questions']
+        current_question = get_question_by_id(all_questions, question_ids[current_index][0])
+    
+    return render_template('quiz.html',
+                         question=current_question,
+                         question_number=current_index + 1,
+                         total_questions=len(question_ids),
                          year=datetime.now().year)
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    if 'questions' not in session:
+    if 'question_ids' not in session:
         return redirect(url_for('index'))
     
-    questions = session['questions']
-    current = session['current_question']
+    current_index = session.get('current_index', 0)
     
-    # Armazenar a resposta do usuário e a correta para feedback
-    if questions[current].get('multiple_answers', False):
+    # Carregar a questão atual do arquivo
+    with open(os.path.join(os.path.dirname(__file__), 'questions.json'), 'r', encoding='utf-8') as file:
+        all_questions = json.load(file)['questions']
+        current_question = get_question_by_id(all_questions, session['question_ids'][current_index][0])
+    
+    if current_question.get('multiple_answers', False):
         user_answers = request.form.getlist('answer')
-        correct_answers = questions[current]['correct_answers']
+        correct_answers = current_question['correct_answers']
         is_correct = set(user_answers) == set(correct_answers)
     else:
         user_answer = request.form.get('answer')
-        correct_answer = questions[current]['correct_answer']
+        correct_answer = current_question['correct_answer']
         is_correct = user_answer == correct_answer
 
     if is_correct:
         session['score'] = session.get('score', 0) + 1
     
-    has_next = current + 1 < len(questions)
-    return render_template('feedback.html', 
-                         question=questions[current],
+    has_next = current_index + 1 < len(session['question_ids'])
+    return render_template('feedback.html',
+                         question=current_question,
                          is_correct=is_correct,
                          has_next=has_next,
                          year=datetime.now().year)
 
 @app.route('/next', methods=['POST'])
 def next_question():
-    if 'questions' not in session:
+    if 'question_ids' not in session:
         return redirect(url_for('index'))
     
-    current = session.get('current_question', 0)
-    session['current_question'] = current + 1
+    current = session.get('current_index', 0)
+    session['current_index'] = current + 1
     
-    if current + 1 >= len(session['questions']):
+    if current + 1 >= len(session['question_ids']):
         return redirect(url_for('result'))
     
     return redirect(url_for('quiz'))
 
 @app.route('/result')
 def result():
-    if 'questions' not in session:
+    if 'question_ids' not in session:
         return redirect(url_for('index'))
     
     score = session.get('score', 0)
-    total = len(session['questions'])
+    total = len(session['question_ids'])
     return render_template('result.html', score=score, total=total, year=datetime.now().year)
 
 @app.route('/finish')
@@ -130,7 +161,12 @@ def shutdown():
         print(f"Erro ao tentar encerrar: {str(e)}")
         return redirect(url_for('index'))
 
+# Configurações adicionais do Flask
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max-limit
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0  # Desabilitar cache
+
 if __name__ == '__main__':
     print("Iniciando o servidor Flask...")
     print(f"Diretório atual: {os.getcwd()}")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Aumentar o limite de tempo de resposta
+    app.run(debug=True, host='0.0.0.0', port=5000, threaded=True)

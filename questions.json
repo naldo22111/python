@@ -735,6 +735,150 @@
             "exam_topic": "AWS Certified Cloud Practitioner",
             "correct_answer": "C",
             "id": 50
+        },
+        {
+            "question": "Which of the following is a software development framework that a company can use to define cloud resources as code and provision the resources through AWS CloudFormation?",
+            "options": {
+                "A": "AWS CLI",
+                "B": "AWS Developer Center",
+                "C": "AWS Cloud Development Kit (AWS CDK)",
+                "D": "AWS CodeStar"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "C",
+            "id": 51
+        },
+        {
+            "question": "A company is developing an application that uses multiple AWS services. The application needs to use temporary, limited-privilege credentials for authentication with other AWS APIs.\nWhich AWS service or feature should the company use to meet these authentication requirements?",
+            "options": {
+                "A": "Amazon API Gateway",
+                "B": "IAM users",
+                "C": "AWS Security Token Service (AWS STS)",
+                "D": "IAM instance profiles"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "C",
+            "id": 52
+        },
+        {
+            "question": "Which AWS service is a cloud security posture management (CSPM) service that aggregates alerts from various AWS services and partner products in a standardized format?",
+            "options": {
+                "A": "AWS Security Hub",
+                "B": "AWS Trusted Advisor",
+                "C": "Amazon EventBridge",
+                "D": "Amazon GuardDuty"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "A",
+            "id": 53
+        },
+        {
+            "question": "Which AWS service is always provided at no charge?",
+            "options": {
+                "A": "Amazon S3",
+                "B": "AWS Identity and Access Management (IAM)",
+                "C": "Elastic Load Balancers",
+                "D": "AWS WAF"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "B",
+            "id": 54
+        },
+        {
+            "question": "To reduce costs, a company is planning to migrate a NoSQL database to AWS.\nWhich AWS service is fully managed and can automatically scale throughput capacity to meet database workload demands?",
+            "options": {
+                "A": "Amazon Redshift",
+                "B": "Amazon Aurora",
+                "C": "Amazon DynamoDB",
+                "D": "Amazon RDS"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "C",
+            "id": 55
+        },
+        {
+            "question": "A company is using Amazon DynamoDB.\nWhich task is the company’s responsibility, according to the AWS shared responsibility model?",
+            "options": {
+                "A": "Patch the operating system.",
+                "B": "Provision hosts.",
+                "C": "Manage database access permissions.",
+                "D": "Secure the operating system."
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "C",
+            "id": 56
+        },
+        {
+            "question": "A company has a test AWS environment. A company is planning on testing an application within AWS. The application testing can be interrupted and does not need to run continuously.\nWhich Amazon EC2 purchasing option will meet these requirements MOST cost-effectively?",
+            "options": {
+                "A": "On-Demand Instances",
+                "B": "Dedicated Instances",
+                "C": "Spot Instances",
+                "D": "Reserved Instances"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "C",
+            "id": 57
+        },
+        {
+            "question": "Which AWS service gives users the ability to discover and protect sensitive data that is stored in Amazon S3 buckets?",
+            "options": {
+                "A": "Amazon Macie",
+                "B": "Amazon Detective",
+                "C": "Amazon GuardDuty",
+                "D": "AWS IAM Access Analyzer"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "A",
+            "id": 58
+        },
+        {
+            "question": "Which of the following services can be used to block network traffic to an instance? (Choose two.)",
+            "options": {
+                "A": "Security groups",
+                "B": "Amazon Virtual Private Cloud (Amazon VPC) flow logs",
+                "C": "Network ACLs",
+                "D": "Amazon CloudWatch",
+                "E": "AWS CloudTrail"
+            },
+            "type": "text",
+            "multiple_answers": true,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answers": [
+                "A",
+                "C"
+            ],
+            "id": 59
+        },
+        {
+            "question": "Which AWS service can identify when an Amazon EC2 instance was terminated?",
+            "options": {
+                "A": "AWS Identity and Access Management (IAM)",
+                "B": "AWS CloudTrail",
+                "C": "AWS Compute Optimizer",
+                "D": "Amazon EventBridge"
+            },
+            "type": "text",
+            "multiple_answers": false,
+            "exam_topic": "AWS Certified Cloud Practitioner",
+            "correct_answer": "B",
+            "id": 60
         }
     ]
 }
