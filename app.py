@@ -1,3 +1,12 @@
+#
+# Este script é um servidor Flask que serve um exame de múltipla escolha.
+# Ele carrega questões de um arquivo JSON e exibe uma questão por vez.
+# O usuário pode responder a cada pergunta e ver o feedback imediatamente.
+# No final, o usuário recebe uma pontuação e pode reiniciar o exame.
+#
+# Autor: Naldo Pinheiro
+# Data: 2025-03-25
+# Versão: 1.0
 from flask import Flask, render_template, request, session, redirect, url_for
 import json
 import os
