@@ -13,6 +13,8 @@ import os
 import random
 import sys
 from datetime import datetime
+import tempfile
+import pickle
 
 app = Flask(__name__)
 app.secret_key = 'sua_chave_secreta_aqui'
@@ -38,6 +40,17 @@ def load_questions():
         traceback.print_exc()
         return []
 
+def load_questions_from_file(file_content):
+    try:
+        data = json.loads(file_content)
+        questions = data['questions']
+        exam_description = data.get('exam_description', 'Exame de Múltipla Escolha')
+        print(f"Carregadas {len(questions)} questões do arquivo enviado")
+        return questions, exam_description
+    except Exception as e:
+        print(f"Erro ao carregar arquivo enviado: {str(e)}")
+        return None, None
+
 def get_question_by_id(questions, question_id):
     return next((q for q in questions if q['id'] == question_id), None)
 
@@ -47,60 +60,98 @@ def shutdown_server():
         raise RuntimeError('Não executando com o servidor Werkzeug')
     func()
 
-@app.route('/')
+def save_questions_temp(questions):
+    temp_dir = os.path.join(os.path.dirname(__file__), 'temp')
+    if not os.path.exists(temp_dir):
+        os.makedirs(temp_dir)
+    
+    # Criar arquivo temporário com ID único
+    temp_id = datetime.now().strftime('%Y%m%d%H%M%S') + str(random.randint(1000, 9999))
+    temp_path = os.path.join(temp_dir, f'questions_{temp_id}.pkl')
+    
+    with open(temp_path, 'wb') as f:
+        pickle.dump(questions, f)
+    
+    return temp_id
+
+def load_questions_temp(temp_id):
+    temp_path = os.path.join(os.path.dirname(__file__), 'temp', f'questions_{temp_id}.pkl')
+    try:
+        with open(temp_path, 'rb') as f:
+            return pickle.load(f)
+    except:
+        return None
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
     session.clear()
-    try:
-        question_ids, all_questions = load_questions()
-        if not question_ids:
-            return "Erro ao carregar questões. Verifique o arquivo questions.json", 500
+    if request.method == 'POST':
+        if 'question_file' not in request.files:
+            return "Nenhum arquivo selecionado", 400
         
-        # Armazenar apenas IDs e informações essenciais na sessão
-        session['question_ids'] = question_ids
-        session['current_index'] = 0
-        session['score'] = 0
-        session['total_questions'] = len(question_ids)
+        file = request.files['question_file']
+        if file.filename == '':
+            return "Nenhum arquivo selecionado", 400
         
-        return render_template('index.html', year=datetime.now().year)
-    except Exception as e:
-        print(f"Erro ao inicializar o exame: {str(e)}")
-        import traceback
-        traceback.print_exc()
-        return "Erro ao inicializar o exame", 500
+        if not file.filename.endswith('.json'):
+            return "Por favor, selecione um arquivo JSON", 400
+        
+        try:
+            file_content = file.read().decode('utf-8')
+            questions, exam_description = load_questions_from_file(file_content)
+            
+            if not questions:
+                return "Erro ao processar arquivo. Verifique o formato.", 400
+            
+            # Salvar questões em arquivo temporário
+            temp_id = save_questions_temp(questions)
+            
+            # Armazenar informações na sessão
+            session['temp_id'] = temp_id
+            session['current_index'] = 0
+            session['score'] = 0
+            session['total_questions'] = len(questions)
+            session['exam_description'] = exam_description
+            
+            return redirect(url_for('quiz'))
+        except Exception as e:
+            print(f"Erro ao processar arquivo: {str(e)}")
+            return "Erro ao processar arquivo", 500
+    
+    return render_template('index.html', year=datetime.now().year)
 
 @app.route('/quiz')
 def quiz():
-    if 'question_ids' not in session:
+    if 'temp_id' not in session:
+        return redirect(url_for('index'))
+    
+    questions = load_questions_temp(session['temp_id'])
+    if not questions:
         return redirect(url_for('index'))
     
     current_index = session.get('current_index', 0)
-    question_ids = session.get('question_ids', [])
     
-    if current_index >= len(question_ids):
+    if current_index >= len(questions):
         return redirect(url_for('result'))
     
-    # Carregar a questão atual do arquivo
-    with open(os.path.join(os.path.dirname(__file__), 'questions.json'), 'r', encoding='utf-8') as file:
-        all_questions = json.load(file)['questions']
-        current_question = get_question_by_id(all_questions, question_ids[current_index][0])
-    
     return render_template('quiz.html',
-                         question=current_question,
+                         question=questions[current_index],
                          question_number=current_index + 1,
-                         total_questions=len(question_ids),
+                         total_questions=len(questions),
+                         exam_description=session.get('exam_description', 'Exame'),
                          year=datetime.now().year)
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    if 'question_ids' not in session:
+    if 'temp_id' not in session:
+        return redirect(url_for('index'))
+    
+    questions = load_questions_temp(session['temp_id'])
+    if not questions:
         return redirect(url_for('index'))
     
     current_index = session.get('current_index', 0)
-    
-    # Carregar a questão atual do arquivo
-    with open(os.path.join(os.path.dirname(__file__), 'questions.json'), 'r', encoding='utf-8') as file:
-        all_questions = json.load(file)['questions']
-        current_question = get_question_by_id(all_questions, session['question_ids'][current_index][0])
+    current_question = questions[current_index]
     
     if current_question.get('multiple_answers', False):
         user_answers = request.form.getlist('answer')
@@ -114,7 +165,7 @@ def submit():
     if is_correct:
         session['score'] = session.get('score', 0) + 1
     
-    has_next = current_index + 1 < len(session['question_ids'])
+    has_next = current_index + 1 < len(questions)
     return render_template('feedback.html',
                          question=current_question,
                          is_correct=is_correct,
@@ -123,25 +174,37 @@ def submit():
 
 @app.route('/next', methods=['POST'])
 def next_question():
-    if 'question_ids' not in session:
+    if 'temp_id' not in session:  # Mudado de question_ids para temp_id
+        return redirect(url_for('index'))
+    
+    questions = load_questions_temp(session['temp_id'])
+    if not questions:
         return redirect(url_for('index'))
     
     current = session.get('current_index', 0)
     session['current_index'] = current + 1
     
-    if current + 1 >= len(session['question_ids']):
+    if current + 1 >= len(questions):  # Mudado de question_ids para questions
         return redirect(url_for('result'))
     
     return redirect(url_for('quiz'))
 
 @app.route('/result')
 def result():
-    if 'question_ids' not in session:
+    if 'temp_id' not in session:  # Mudado de question_ids para temp_id
+        return redirect(url_for('index'))
+    
+    questions = load_questions_temp(session['temp_id'])
+    if not questions:
         return redirect(url_for('index'))
     
     score = session.get('score', 0)
-    total = len(session['question_ids'])
-    return render_template('result.html', score=score, total=total, year=datetime.now().year)
+    total = len(questions)  # Usar questions diretamente
+    return render_template('result.html', 
+                         score=score, 
+                         total=total, 
+                         exam_description=session.get('exam_description', 'Exame'),
+                         year=datetime.now().year)
 
 @app.route('/finish')
 def finish():
@@ -174,8 +237,21 @@ def shutdown():
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max-limit
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0  # Desabilitar cache
 
+def cleanup_temp_files():
+    temp_dir = os.path.join(os.path.dirname(__file__), 'temp')
+    if os.path.exists(temp_dir):
+        for file in os.listdir(temp_dir):
+            file_path = os.path.join(temp_dir, file)
+            # Remover arquivos mais antigos que 1 hora
+            if os.path.getctime(file_path) < time.time() - 3600:
+                os.remove(file_path)
+
 if __name__ == '__main__':
+    # Criar diretório temp se não existir
+    temp_dir = os.path.join(os.path.dirname(__file__), 'temp')
+    if not os.path.exists(temp_dir):
+        os.makedirs(temp_dir)
+    
     print("Iniciando o servidor Flask...")
     print(f"Diretório atual: {os.getcwd()}")
-    # Aumentar o limite de tempo de resposta
     app.run(debug=True, host='0.0.0.0', port=5000, threaded=True)

@@ -6,6 +6,7 @@
 </head>
 <body>
     <div class="container">
+        <h1 class="exam-title">{{ exam_description }}</h1>
         <h2>Questão {{ question_number }} de {{ total_questions }}</h2>
         
         <div class="question">
@@ -20,10 +21,10 @@
             <div class="option">
                 {% if question.multiple_answers %}
                 <input type="checkbox" name="answer" value="{{ letra }}" id="option{{ letra }}">
-                <label for="option{{ letra }}">{{ letra }}) {{ texto }}</label>
+                <label for="option{{ letra }}">{{ letra }}">{{ texto }}</label>
                 {% else %}
                 <input type="radio" name="answer" value="{{ letra }}" id="option{{ letra }}" required>
-                <label for="option{{ letra }}">{{ letra }}) {{ texto }}</label>
+                <label for="option{{ letra }}">{{ letra }}">{{ texto }}</label>
                 {% endif %}
             </div>
             {% endfor %}

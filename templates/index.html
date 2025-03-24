@@ -8,9 +8,19 @@
     <div class="container">
         <h1>Bem-vindo ao Exame!</h1>
         <p>Teste seus conhecimentos respondendo às questões.</p>
-        <div class="button-group">
-            <a href="{{ url_for('quiz') }}" class="button">Começar Exame</a>
-            <a href="{{ url_for('finish') }}" class="button button-danger">Sair</a>
+        
+        <div class="upload-section">
+            <h2>Escolha o arquivo de questões:</h2>
+            <form method="POST" enctype="multipart/form-data">
+                <div class="file-input-wrapper">
+                    <input type="file" name="question_file" accept=".json" required>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="button">Carregar e Iniciar</button>
+                    <a href="{{ url_for('finish') }}" class="button button-danger">Sair</a>
+                </div>
+            </form>
+            <p class="file-hint">Selecione um arquivo JSON com as questões do exame</p>
         </div>
     </div>
     <footer class="footer">

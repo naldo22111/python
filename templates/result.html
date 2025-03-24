@@ -6,7 +6,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Resultado do Exame</h1>
+        <h1 class="exam-title">{{ exam_description }}</h1>
+        <h2>Resultado do Exame</h2>
         <p>Você acertou {{ score }} de {{ total }} questões!</p>
         <p>Pontuação: {{ (score / total * 100)|round(2) }}%</p>
         <div class="button-group">
