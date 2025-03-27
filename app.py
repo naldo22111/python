@@ -161,6 +161,10 @@ def submit():
     current_index = session.get('current_index', 0)
     current_question = questions[current_index]
     
+    # Inicializar lista de questões incorretas se não existir
+    if 'incorrect_questions' not in session:
+        session['incorrect_questions'] = []
+    
     if current_question.get('multiple_answers', False):
         user_answers = request.form.getlist('answer')
         correct_answers = current_question['correct_answers']
@@ -172,6 +176,9 @@ def submit():
 
     if is_correct:
         session['score'] = session.get('score', 0) + 1
+    else:
+        # Armazenar questão incorreta
+        session['incorrect_questions'] = session.get('incorrect_questions', []) + [current_question]
     
     has_next = current_index + 1 < len(questions)
     return render_template('feedback.html',
@@ -179,6 +186,38 @@ def submit():
                          is_correct=is_correct,
                          has_next=has_next,
                          year=datetime.now().year)
+
+@app.route('/retry-incorrect')
+def retry_incorrect():
+    # Garantir que a lista de questões incorretas existe na sessão
+    if 'temp_id' not in session:
+        return redirect(url_for('index'))
+    
+    # Carregar questões atuais
+    questions = load_questions_temp(session['temp_id'])
+    if not questions:
+        return redirect(url_for('index'))
+    
+    incorrect_questions = session.get('incorrect_questions', [])
+    if not incorrect_questions:
+        return redirect(url_for('index'))
+    
+    # Criar novo arquivo temporário para as questões incorretas
+    new_temp_id = save_questions_temp(incorrect_questions)
+    
+    # Guardar informações importantes
+    old_description = session.get('exam_description', 'Exame')
+    
+    # Limpar e reinicializar a sessão com novas informações
+    session.clear()
+    session['temp_id'] = new_temp_id
+    session['current_index'] = 0
+    session['score'] = 0
+    session['total_questions'] = len(incorrect_questions)
+    session['exam_description'] = f"Revisão - {old_description}"
+    session['incorrect_questions'] = []  # Iniciar nova lista vazia de questões incorretas
+    
+    return redirect(url_for('quiz'))
 
 @app.route('/next', methods=['POST'])
 def next_question():
@@ -197,27 +236,62 @@ def next_question():
     
     return redirect(url_for('quiz'))
 
+def process_remaining_questions():
+    """Processa questões não respondidas como incorretas"""
+    if 'temp_id' not in session:
+        return
+
+    questions = load_questions_temp(session['temp_id'])
+    if not questions:
+        return
+
+    current_index = session.get('current_index', 0)
+    
+    # Inicializar lista de questões incorretas se não existir
+    if 'incorrect_questions' not in session:
+        session['incorrect_questions'] = []
+    
+    # Adicionar todas as questões não respondidas à lista de incorretas
+    remaining_questions = questions[current_index:]
+    if remaining_questions:
+        session['incorrect_questions'] = session.get('incorrect_questions', []) + remaining_questions
+        # Atualizar o total de questões respondidas
+        session['total_questions'] = len(questions)
+
+@app.route('/finish')
+def finish():
+    # Processar questões não respondidas antes de finalizar
+    process_remaining_questions()
+    
+    # Se houver questões incorretas, redirecionar para a página de resultados
+    if session.get('incorrect_questions'):
+        return redirect(url_for('result'))
+    
+    return render_template('confirm_exit.html', year=datetime.now().year)
+
 @app.route('/result')
 def result():
-    if 'temp_id' not in session:  # Mudado de question_ids para temp_id
+    if 'temp_id' not in session:
         return redirect(url_for('index'))
     
     questions = load_questions_temp(session['temp_id'])
     if not questions:
         return redirect(url_for('index'))
     
+    # Garantir que a lista de questões incorretas existe
+    if 'incorrect_questions' not in session:
+        session['incorrect_questions'] = []
+    
     score = session.get('score', 0)
-    total = len(questions)  # Usar questions diretamente
+    total = session.get('total_questions', len(questions))
+    incorrect_count = len(session.get('incorrect_questions', []))
+    
     return render_template('result.html', 
                          score=score, 
-                         total=total, 
+                         total=total,
+                         incorrect_count=incorrect_count,
                          exam_description=session.get('exam_description', 'Exame'),
                          year=datetime.now().year)
-
-@app.route('/finish')
-def finish():
-    session.clear()
-    return render_template('confirm_exit.html', year=datetime.now().year)
 
 @app.route('/shutdown', methods=['POST'])
 def shutdown():

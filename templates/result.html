@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Exame App - Resultado</title>
+    <title>Resultado do Exame</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1 class="exam-title">{{ exam_description }}</h1>
-        <h2>Resultado do Exame</h2>
-        <p>Você acertou {{ score }} de {{ total }} questões!</p>
-        <p>Pontuação: {{ (score / total * 100)|round(2) }}%</p>
+        <h1>Resultado Final - {{ exam_description }}</h1>
+        <div class="result-box">
+            <h2>Sua pontuação: {{ score }} de {{ total }}</h2>
+            <p>Porcentagem de acerto: {{ (score/total * 100)|round(2) }}%</p>
+            
+            {% if session.incorrect_questions %}
+            <div class="recommendation-box">
+                <h3>Recomendação para Melhorar:</h3>
+                <p>Você errou {{ incorrect_count }} questões. Recomendamos que você revise estas questões específicas para melhorar seu desempenho.</p>
+                <div class="action-buttons">
+                    <a href="{{ url_for('retry_incorrect') }}" class="button button-primary">
+                        Refazer Apenas Questões Incorretas
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
         <div class="button-group">
-            <a href="{{ url_for('index') }}" class="button">Tentar Novamente</a>
-            <a href="{{ url_for('finish') }}" class="button button-danger">Encerrar Aplicativo</a>
+            <a href="{{ url_for('index') }}" class="button button-secondary">Novo Exame Completo</a>
+            <form action="{{ url_for('shutdown') }}" method="POST" style="display: inline;">
+                <button type="submit" class="button button-danger">Finalizar</button>
+            </form>
         </div>
     </div>
     <footer class="footer">

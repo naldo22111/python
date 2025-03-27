@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Exame App - Confirmar Saída</title>
+    <title>Finalizar Exame</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Deseja realmente sair?</h1>
-        <p>Esta ação irá encerrar o aplicativo.</p>
-        <div class="button-group">
-            <a href="{{ url_for('index') }}" class="button">Voltar ao Exame</a>
-            <form action="{{ url_for('shutdown') }}" method="post" style="display: inline;">
-                <button type="submit" class="button button-danger">Confirmar e Sair</button>
-            </form>
+        <h1>Finalizar Exame</h1>
+        <div class="confirmation-box">
+            <p>Você tem certeza que deseja finalizar o exame?</p>
+            <div class="button-group">
+                <form action="{{ url_for('shutdown') }}" method="POST">
+                    <button type="submit" class="button button-danger">Sim, Finalizar e Fechar</button>
+                </form>
+                <a href="{{ url_for('index') }}" class="button button-secondary">Não, Voltar ao Início</a>
+            </div>
         </div>
     </div>
     <footer class="footer">
