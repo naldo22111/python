@@ -187,20 +187,50 @@ def submit():
                          has_next=has_next,
                          year=datetime.now().year)
 
+def process_remaining_questions():
+    """Processa questões não respondidas como incorretas"""
+    if 'temp_id' not in session:
+        return
+
+    questions = load_questions_temp(session['temp_id'])
+    if not questions:
+        return
+
+    current_index = session.get('current_index', 0)
+    
+    # Inicializar lista de questões incorretas se não existir
+    if 'incorrect_questions' not in session:
+        session['incorrect_questions'] = []
+
+    # Converter a lista de incorretas atual para uma lista mutável
+    incorrect_list = list(session.get('incorrect_questions', []))
+    
+    # Adicionar todas as questões não respondidas à lista de incorretas
+    for i in range(current_index, len(questions)):
+        question = questions[i]
+        if question not in incorrect_list:
+            incorrect_list.append(question)
+    
+    # Atualizar a sessão com a nova lista de questões incorretas
+    session['incorrect_questions'] = incorrect_list
+    session['total_questions'] = len(questions)
+    session['current_index'] = len(questions)
+    session.modified = True
+
 @app.route('/retry-incorrect')
 def retry_incorrect():
-    # Garantir que a lista de questões incorretas existe na sessão
     if 'temp_id' not in session:
         return redirect(url_for('index'))
     
-    # Carregar questões atuais
-    questions = load_questions_temp(session['temp_id'])
-    if not questions:
-        return redirect(url_for('index'))
+    # Processar questões não respondidas antes de iniciar a revisão
+    process_remaining_questions()
     
     incorrect_questions = session.get('incorrect_questions', [])
     if not incorrect_questions:
         return redirect(url_for('index'))
+    
+    # Embaralhar as questões incorretas
+    random.shuffle(incorrect_questions)
     
     # Criar novo arquivo temporário para as questões incorretas
     new_temp_id = save_questions_temp(incorrect_questions)
@@ -215,7 +245,7 @@ def retry_incorrect():
     session['score'] = 0
     session['total_questions'] = len(incorrect_questions)
     session['exam_description'] = f"Revisão - {old_description}"
-    session['incorrect_questions'] = []  # Iniciar nova lista vazia de questões incorretas
+    session['incorrect_questions'] = []
     
     return redirect(url_for('quiz'))
 
@@ -236,28 +266,6 @@ def next_question():
     
     return redirect(url_for('quiz'))
 
-def process_remaining_questions():
-    """Processa questões não respondidas como incorretas"""
-    if 'temp_id' not in session:
-        return
-
-    questions = load_questions_temp(session['temp_id'])
-    if not questions:
-        return
-
-    current_index = session.get('current_index', 0)
-    
-    # Inicializar lista de questões incorretas se não existir
-    if 'incorrect_questions' not in session:
-        session['incorrect_questions'] = []
-    
-    # Adicionar todas as questões não respondidas à lista de incorretas
-    remaining_questions = questions[current_index:]
-    if remaining_questions:
-        session['incorrect_questions'] = session.get('incorrect_questions', []) + remaining_questions
-        # Atualizar o total de questões respondidas
-        session['total_questions'] = len(questions)
-
 @app.route('/finish')
 def finish():
     # Processar questões não respondidas antes de finalizar
@@ -274,39 +282,45 @@ def result():
     if 'temp_id' not in session:
         return redirect(url_for('index'))
     
+    # Processar questões não respondidas antes de mostrar resultados
+    process_remaining_questions()
+    
     questions = load_questions_temp(session['temp_id'])
     if not questions:
         return redirect(url_for('index'))
     
-    # Garantir que a lista de questões incorretas existe
-    if 'incorrect_questions' not in session:
-        session['incorrect_questions'] = []
-    
     score = session.get('score', 0)
-    total = session.get('total_questions', len(questions))
-    incorrect_count = len(session.get('incorrect_questions', []))
+    total = len(questions)
+    incorrect_questions = session.get('incorrect_questions', [])
+    incorrect_count = len(incorrect_questions)
+    
+    # Calcular pontuação considerando questões não respondidas
+    answered_count = session.get('current_index', 0)
+    unanswered_count = total - answered_count
     
     return render_template('result.html', 
                          score=score, 
                          total=total,
                          incorrect_count=incorrect_count,
+                         unanswered_count=unanswered_count,
                          exam_description=session.get('exam_description', 'Exame'),
                          year=datetime.now().year)
 
 @app.route('/shutdown', methods=['POST'])
 def shutdown():
+    # Processar questões não respondidas antes de finalizar
+    process_remaining_questions()
+    
     session.clear()
     try:
         response = render_template('goodbye.html', year=datetime.now().year)
         
-        # Agendar o encerramento do servidor para depois da resposta
         def shutdown_after_request():
             func = request.environ.get('werkzeug.server.shutdown')
             if func is None:
                 sys.exit(0)
             func()
             
-        # Executar o shutdown em uma thread separada após 1 segundo
         import threading
         threading.Timer(1.0, shutdown_after_request).start()
         
