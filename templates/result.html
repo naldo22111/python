@@ -11,16 +11,23 @@
             <h2>Sua pontuação: {{ score }} de {{ total }}</h2>
             <p>Porcentagem de acerto: {{ (score/total * 100)|round(2) }}%</p>
             
-            {% if session.incorrect_questions %}
+            <!-- Debug: mostrar quantidade de questões incorretas -->
+            <p>Debug: {{ incorrect_questions|length }} questões incorretas</p>
+            
+            {% if incorrect_questions %}
             <div class="recommendation-box">
                 <h3>Recomendação para Melhorar:</h3>
                 <p>Você errou {{ incorrect_count }} questões. Recomendamos que você revise estas questões específicas para melhorar seu desempenho.</p>
+                <!-- Debug: listar IDs das questões incorretas -->
+                <p>IDs das questões incorretas: {% for q in incorrect_questions %}{{ q.id }}{% if not loop.last %}, {% endif %}{% endfor %}</p>
                 <div class="action-buttons">
                     <a href="{{ url_for('retry_incorrect') }}" class="button button-primary">
                         Refazer Apenas Questões Incorretas
                     </a>
                 </div>
             </div>
+            {% else %}
+            <p>Debug: Nenhuma questão incorreta encontrada</p>
             {% endif %}
         </div>
 
