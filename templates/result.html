@@ -12,7 +12,7 @@
             <p>Porcentagem de acerto: {{ (score/total * 100)|round(2) }}%</p>
             
             <!-- Debug: mostrar quantidade de questões incorretas -->
-            <p>Debug: {{ incorrect_questions|length }} questões incorretas</p>
+            <p>{{ incorrect_questions|length }} questões incorretas</p>
             
             {% if incorrect_questions %}
             <div class="recommendation-box">
@@ -27,7 +27,7 @@
                 </div>
             </div>
             {% else %}
-            <p>Debug: Nenhuma questão incorreta encontrada</p>
+            <p>Nenhuma questão incorreta encontrada</p>
             {% endif %}
         </div>
 
