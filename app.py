@@ -28,34 +28,19 @@ def load_questions():
     try:
         current_dir = os.path.dirname(os.path.abspath(__file__))
         json_path = os.path.join(current_dir, 'questions.json')
-        print("=" * 50)
-        print(f"Loading questions from: {json_path}")
         
         with open(json_path, 'r', encoding='utf-8') as file:
             data = json.load(file)
             all_questions = data['questions']
             
-            # Verify and convert all IDs to integers
+            # Converter IDs para inteiros
             for question in all_questions:
-                try:
-                    question['id'] = int(str(question['id']).strip())
-                    print(f"Processed question ID: {question['id']} - Type: {type(question['id'])}")
-                except (ValueError, KeyError) as e:
-                    print(f"Error processing question: {question.get('id', 'unknown')}")
-                    continue
-            
-            # Debug: Show all questions being loaded
-            print("\nAll loaded questions:")
-            for q in all_questions:
-                print(f"ID: {q['id']} - Question: {q.get('question', 'No question text')[:50]}...")
-            
-            print(f"\nTotal questions loaded: {len(all_questions)}")
-            print("=" * 50)
+                question['id'] = int(str(question['id']).strip())
             
             return all_questions
             
     except Exception as e:
-        print(f"Error loading questions: {str(e)}")
+        print(f"Erro ao carregar questões: {str(e)}")
         return []
 
 def load_questions_from_file(file_content):
@@ -83,10 +68,6 @@ def save_questions_temp(questions):
     if not os.path.exists(temp_dir):
         os.makedirs(temp_dir)
     
-    # Debug: verificar questões antes de salvar
-    print(f"Salvando {len(questions)} questões")
-    print(f"IDs sendo salvos: {sorted([q['id'] for q in questions])}")
-    
     # Criar arquivo temporário com ID único
     temp_id = datetime.now().strftime('%Y%m%d%H%M%S') + str(random.randint(1000, 9999))
     temp_path = os.path.join(temp_dir, f'questions_{temp_id}.pkl')
@@ -100,13 +81,7 @@ def load_questions_temp(temp_id):
     temp_path = os.path.join(os.path.dirname(__file__), 'temp', f'questions_{temp_id}.pkl')
     try:
         with open(temp_path, 'rb') as f:
-            questions = pickle.load(f)
-            # Debug: verificar questões carregadas
-            print("\nDEBUG - Questões carregadas:")
-            for q in questions:
-                print(f"ID: {q['id']}, Tipo: {type(q['id'])}, Questão: {q.get('question', '')[:30]}...")
-            print(f"\nTotal de questões: {len(questions)}")
-            return questions
+            return pickle.load(f)
     except Exception as e:
         print(f"Erro ao carregar questões temporárias: {str(e)}")
         return None
@@ -163,15 +138,10 @@ def quiz():
     
     current_index = session.get('current_index', 0)
     
-    # Debug: print current question being displayed
-    print(f"\nDEBUG - Exibindo questão:")
-    print(f"Índice atual: {current_index}")
-    print(f"Total de questões: {len(questions)}")
-    current_question = questions[current_index]
-    print(f"ID da questão: {current_question['id']}")
-    
     if current_index >= len(questions):
         return redirect(url_for('result'))
+    
+    current_question = questions[current_index]
     
     return render_template('quiz.html',
                          question=current_question,
@@ -191,14 +161,8 @@ def submit():
     
     current_index = session.get('current_index', 0)
     
-    # Debug: verificar índice e questão atual
-    print("\nDEBUG - Submit:")
-    print(f"Índice atual: {current_index}")
-    print(f"Total de questões: {len(questions)}")
-    
     try:
         current_question = questions[current_index]
-        print(f"Processando questão ID: {current_question['id']}")
         
         # Verificar resposta
         if current_question.get('multiple_answers', False):
@@ -218,8 +182,6 @@ def submit():
                 incorrect_ids.append(current_id)
                 session['incorrect_question_ids'] = incorrect_ids
                 session.modified = True
-                print(f"ID {current_id} adicionado à lista de incorretos")
-            print(f"Lista atual de IDs incorretos: {incorrect_ids}")
         
         # Atualizar pontuação
         if is_correct:
@@ -234,7 +196,6 @@ def submit():
         )
         
     except IndexError:
-        print(f"ERRO: Índice {current_index} fora do range (total: {len(questions)})")
         return redirect(url_for('result'))
 
 def process_remaining_questions():
@@ -247,28 +208,20 @@ def process_remaining_questions():
         return
 
     current_index = session.get('current_index', 0)
-    
-    # Debug: print índice atual e total de questões
-    print(f"Processando questões não respondidas. Índice atual: {current_index}, Total: {len(questions)}")
-    
     incorrect_ids = session.get('incorrect_question_ids', [])
-    print(f"IDs incorretos antes de processar: {incorrect_ids}")
     
-    # Processar questões não respondidas, garantindo que os IDs sejam inteiros
+    # Processar questões não respondidas
     for i in range(current_index, len(questions)):
         question = questions[i]
-        question_id = int(question['id'])  # Converter para inteiro
+        question_id = int(question['id'])
         if question_id not in incorrect_ids:
             incorrect_ids.append(question_id)
-            print(f"Adicionado ID não respondido: {question_id}")
     
     # Atualizar a sessão
     session['incorrect_question_ids'] = incorrect_ids
     session['total_questions'] = len(questions)
     session['current_index'] = len(questions)
     session.modified = True
-    
-    print(f"IDs incorretos após processar: {sorted(incorrect_ids)}")  # Ordenar para melhor visualização
 
 @app.route('/retry-incorrect')
 def retry_incorrect():
@@ -305,7 +258,7 @@ def retry_incorrect():
 
 @app.route('/next', methods=['POST'])
 def next_question():
-    if 'temp_id' not in session:  # Mudado de question_ids para temp_id
+    if 'temp_id' not in session:
         return redirect(url_for('index'))
     
     questions = load_questions_temp(session['temp_id'])
@@ -315,7 +268,7 @@ def next_question():
     current = session.get('current_index', 0)
     session['current_index'] = current + 1
     
-    if current + 1 >= len(questions):  # Mudado de question_ids para questions
+    if current + 1 >= len(questions):
         return redirect(url_for('result'))
     
     return redirect(url_for('quiz'))
@@ -349,14 +302,8 @@ def result():
     # Recuperar IDs das questões incorretas
     incorrect_ids = session.get('incorrect_question_ids', [])
     
-    # Debug: imprimir IDs incorretos
-    print(f"IDs incorretos na sessão: {incorrect_ids}")
-    
     # Construir lista de questões incorretas
     incorrect_questions = [q for q in questions if q['id'] in incorrect_ids]
-    
-    # Debug: imprimir quantidade de questões incorretas
-    print(f"Questões incorretas encontradas: {len(incorrect_questions)}")
     
     incorrect_count = len(incorrect_questions)
     answered_count = session.get('current_index', 0)
@@ -367,7 +314,7 @@ def result():
         total=total,
         incorrect_count=incorrect_count,
         unanswered_count=unanswered_count,
-        incorrect_questions=incorrect_questions,  # Passando a lista completa
+        incorrect_questions=incorrect_questions,
         exam_description=session.get('exam_description', 'Exame'),
         year=datetime.now().year
     )
